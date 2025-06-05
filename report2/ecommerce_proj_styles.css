@@ -36,8 +36,7 @@ nav{
 }
 
 .nav-logo{
-    max-width: 300px;
-    max-height: 300px;
+    display: flex;
 }
 
 .nav-links{
@@ -109,13 +108,14 @@ nav{
   font-weight: 400;
   background-color: #4f4f50;
   border-radius: 10px;
-  padding: 0.5rem 0.5rem
+  padding: 0.5rem 0.5rem;
 }
 
 .ecommerce-section .text-content p {
   color: #aaa;
   line-height: 1.8;
   padding-top: 1rem;
+  text-align: left;
 }
 
 .ecommerce-section .image-content {
@@ -294,6 +294,12 @@ section .header{
 .kpis .box p{
     color: #ccc;
     margin-bottom: 0.5rem;
+}
+
+@media (width < 700px){
+    .kpis{
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
 /* Analysis Section */
