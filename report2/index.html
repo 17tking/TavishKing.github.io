@@ -22,7 +22,8 @@
       <li id="link4" class="link"><a href="#">Conclusions</a></li>
     </ul>
 
-  <a class="btn" href="https://github.com/17tking/Ecommerce-Analysis-Tavish-King" target="_blank">GitHub Repo </a>
+  <a class="btn" href="https://github.com/17tking/ECommerce-Analysis-Tavish-King" target="_blank">GitHub Repo</a>
+
 </nav>
 
 
@@ -32,7 +33,14 @@
     <h1>E-Commerce Analysis</h1>
     <h4>Learn about my WHY</h4>
     <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus rem eos aliquid quo rerum temporibus ipsum distinctio numquam ut omnis placeat, nam sint atque quos dolorem laborum? Rerum, esse dolorem.
+      I wanted to take on a project that felt real. I wanted something that mirrors 
+      the challenges businesses analysts actually face in e-commerce. Working with 
+      a multi-table dataset gave me the chance to sharpen my SQL skills, 
+      like writing CTEs, joins, and aggregate functions. I also focused on creating
+      clear, insightful visuals in R to help you easily see what the data reveals.
+    </p>
+    <p>
+      This analysis was built with YOU in mind. Enjoy exploring!
     </p>
   </div>
 
@@ -50,7 +58,8 @@
             <span><i class="ri-earth-line"></i></span>
             <h4>Real-World Data</h4>
             <p>
-                This dataset comes from a Brazilian ecommerce site and lets me explore real-world business questions using messy, incomplete data—just like in real scenarios.
+                With 100K+ observations, this dataset comes from a Brazilian 
+                ecommerce site and lets me explore real-world business questions.
             </p>
             <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">View Data Source <i class="ri-arrow-right-line"></i></a>
         </div>
@@ -93,21 +102,351 @@
 <!--KPI Section-->
 <section class="container">
     <h2 class="header">KEY PERFORMANCE INDICATORS</h2>
-    <div class="features">
+    <h4 class="kpi-intro">
+    <span><i class="ri-team-line"></i></span>
+    I was asked to analyze 6 key areas of our e-commerce performance 
+    to help different teams make informed decisions.
+    Below are the KPIs I explored <span><i class="ri-arrow-down-line"></i></span>
+    </h4>
+    <div class="kpis">
+      <div class="box">
+                  <span><i class="ri-shopping-basket-2-line"></i> Product Affinity</span>
+            <p>
+            Identify which product categories are frequently purchased together 
+            to inform cross-sell strategies and enhance the recommendation engine.
+            </p>
+      </div>
+      <div class="box">
+                  <span><i class="ri-star-fill"></i> Product Reviews</span>
+            <p>
+            Analyze review volume and average ratings to determine which products and 
+            categories are resonating with customers, and where improvements may be needed.
+            </p>
+      </div>
+      <div class="box">
+                  <span><i class="ri-user-add-fill"></i> Customer Retention</span>
+            <p>
+            Measure repeat purchase behavior and time between orders to help assess 
+            the effectiveness of retention campaigns.
+            </p>
+      </div>
+      <div class="box">
+                  <span><i class="ri-road-map-fill"></i> Sales by Location</span>
+            <p>
+            Examine geographic performance trends to support regional ad targeting strategies.
+            </p>
+      </div>
+      <div class="box">
+                  <span><i class="ri-time-fill"></i> Daily Online Orders</span>
+            <p>
+            Evaluate day-to-day sales activity to detect seasonality and optimize website 
+            performance.
+            </p>
+      </div> 
+      <div class="box">
+                  <span><i class="ri-money-dollar-box-fill"></i> Average Order Value</span>
+            <p>
+      Analyze how much revenue is generated per transaction to identify trends in customer purchasing behavior.
+            </p>
+      </div>      
     </div>
 </section>
 
 <!--Analysis Section-->
 <section class="container">
+  <div class="analysis-header">
     <h2 class="header">DATA ANALYSIS</h2>
-    <div class="features">
+    <p>
+      All analyses were conducted using my P.A.S.S. method...Problem, Approach, Stats, Strategy!
+    </p>
+  </div>
+  <!--Product Affinity Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-shopping-basket-2-line"></i></span> Product Affinity</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
     </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Product Reviews Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-star-fill"></i></span> Product Reviews</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
+    </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Customer Retention Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-user-add-fill"></i></span> Customer Retention</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
+    </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Sales by Location Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-road-map-fill"></i></span> Sales by Location</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
+    </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Daily Online Orders Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-time-fill"></i></span> Daily Online Orders</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
+    </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
+
+  <!--AOV Analysis Card-->
+  <div class="analysis-card">
+    <div class="card-content">
+      <h3><span><i class="ri-money-dollar-box-fill"></i></span> Average Order Value (AOV)</h3>
+      <ul>
+        <li><strong>PROBLEM</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos
+          </p>
+        <li><strong>APPROACH</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos 
+          </p>
+        <li><strong>STATS</strong></li>
+        <div class="stat-container">
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>24%</strong> quo rerum omnis.
+            </p>
+          </div>
+          <div class="stat-card">
+            <p>
+              Lorem ispsum dolor <strong>50.5</strong> quo rerum omnis.
+            </p>
+          </div>
+        </div>
+        <li><strong>STRATEGY</strong></li>
+          <p>Lorem ipsum, dolor 
+          sit amet consectetur adipisicing elit. Repellendus 
+          rem eos aliquid quo rerum temporibus ipsum distinctio 
+          numquam ut omnis placeat, nam sint atque quos dolorem laborum?
+           Rerum, esse dolorem.</p>
+      </ul>
+    </div>
+    <div class="card-slideshow">
+      <img src="images/Plots/MeanEmotion.jpg" class="slide active" alt="" />
+      <img src="images/Plots/Dampening.Plot.jpg" class="slide" alt="" />
+
+      <div class="slide-controls">
+        <button onclick="prevSlide(this)">‹</button>
+        <button onclick="nextSlide(this)">›</button>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!--Conclusions Section-->
 <section class="container">
     <h2 class="header">CONCLUSIONS</h2>
-    <div class="features">
+    <div class="conclusion">
     </div>
 </section>
 

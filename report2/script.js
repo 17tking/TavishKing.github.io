@@ -22,9 +22,28 @@ link2.addEventListener('click', () => {
 });
 
 link3.addEventListener('click', () => {
-    scrollToElement('.header', 1);
+    scrollToElement('.header', 2);
 });
 
 link4.addEventListener('click', () => {
-    scrollToElement('.header', 1);
+    scrollToElement('.header', 3);
 });
+
+
+function nextSlide(btn) {
+  const container = btn.closest('.card-slideshow');
+  const slides = container.querySelectorAll('.slide');
+  let current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+  slides[current].classList.remove('active');
+  slides[(current + 1) % slides.length].classList.add('active');
+}
+
+function prevSlide(btn) {
+  const container = btn.closest('.card-slideshow');
+  const slides = container.querySelectorAll('.slide');
+  let current = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+
+  slides[current].classList.remove('active');
+  slides[(current - 1 + slides.length) % slides.length].classList.add('active');
+}

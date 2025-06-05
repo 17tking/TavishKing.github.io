@@ -23,6 +23,8 @@ body{
     background-color: #27272b;
 }
 
+/* Navigation Bar Section */
+
 nav{
     max-width: 1200px;
     margin: auto;
@@ -34,7 +36,8 @@ nav{
 }
 
 .nav-logo{
-    max-width: 200px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .nav-links{
@@ -42,38 +45,51 @@ nav{
     display: flex;
     align-items: center;
     gap: 4rem;
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
-.link a{
-    position: relative;
-    padding-bottom: 0.75rem;
+.link a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem; 
     color: #fff;
+    background-color: #1f1f1f
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.link a:hover {
+    border-color: #3b3b3b;
+    background-color: #4f4f50;
 }
 
 .btn{
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
+    padding: 1rem 1rem;
+    font-size: 1.1rem;
     color: #fff;
     background-color: #af1e1e;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .btn:hover{
-    background-color: #b9b5b5;
+    background-color: #4f4f50;
 }
+
+/* MAIN */
 
 .ecommerce-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 2rem;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .ecommerce-section .text-content {
@@ -91,11 +107,15 @@ nav{
   color: #ccc;
   margin-bottom: 1rem;
   font-weight: 400;
+  background-color: #4f4f50;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem
 }
 
 .ecommerce-section .text-content p {
   color: #aaa;
-  line-height: 1.6;
+  line-height: 1.8;
+  padding-top: 1rem;
 }
 
 .ecommerce-section .image-content {
@@ -119,16 +139,20 @@ nav{
   }
 }
 
+/* Project Overview Section */
+
 section .header{
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
     color: #fff;
-    text-align: center;
+    margin: 2rem;
     font-size: 2.25rem;
     font-weight: 600;
 }
 
 .features{
-    margin-top: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    margin: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -136,15 +160,15 @@ section .header{
 
 .features .card{
     background-color: #27272a;
-    padding: 1rem;
-    border: 2px solid transparent;
-    border-radius: 15px;
+    padding: 1.25rem;
+    border: 3px solid;
+    border-color: #4f4f50;
+    border-radius: 10px;
     transition: all 0.3s ease;
 }
 
 .features .card:hover{
-    background-color: #323232;
-    border-color: #fff;
+    background-color: #3b3b3b;
 }
 
 .features .card span{
@@ -172,7 +196,7 @@ section .header{
 }
 
 .card-list li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 
@@ -216,4 +240,200 @@ section .header{
     .features{
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+/* KPI Section */
+
+.kpis{
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.kpi-intro{
+    color: #ccc;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 2rem;
+    max-width: 600px;
+}
+
+.kpis h4 span{
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.kpis .box{
+    background-color: #27272a;
+    padding: 1rem;
+    border: 3px solid;
+    border-color: #4f4f50;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.kpis .box:hover{
+    background-color: #3b3b3b;
+}
+
+.kpis .box span{
+    display: inline-block;
+    background-color: #588b8b;
+    padding: 2px 9px;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.kpis .box p{
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+/* Analysis Section */
+
+.analysis-header  p{
+    color: #ccc;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 2rem;
+    max-width: 600px;
+}
+
+.analysis-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: #27272a;
+  border: 3px solid;
+  border-color: #4f4f50;
+  border-radius: 10px;
+  padding: 2rem;
+  margin: 2rem;
+  margin-bottom: 2rem;
+  width: 90%;
+}
+
+.analysis-card:hover{
+    background-color: #252424;
+}
+
+.card-content {
+  color: #fff;
+}
+
+.card-content h3 {
+    display: inline-block;
+    background-color: #C28458;
+    border-radius: 10px;
+    padding: 3px 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.card-content, .card-slideshow {
+  flex: 1 1 300px;
+  min-width: 280px;
+}
+
+.card-content strong{
+  color:#C28458;
+  text-decoration: underline;
+}
+
+.card-content {
+  color: #fff;
+}
+
+.card-content ul {
+  padding-left: 1rem;
+  list-style: none;
+  line-height: 1.6;
+  font-size: 1.3rem;
+}
+
+.card-content p{
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  color: #ccc
+}
+
+.card-content .stat-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.stat-container .stat-card{
+    background-color: #0f0f0f;
+    padding: 0.5rem;
+    border: 3px solid;
+    border-color: #0f0f0f;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.stat-card p{
+  color:#ccc;
+}
+
+.stat-card strong{
+  text-decoration: none;
+  color: #1c77c3;
+  font-size: 2rem;
+}
+
+.stat-card:hover{
+  background-color: #38383b;
+  border-color: #38383b;
+}
+
+.card-slideshow {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.card-slideshow .slide {
+  width: 100%;
+  display: none;
+  border-radius: 5px;
+}
+
+.card-slideshow .slide.active {
+  display: block;
+}
+
+.slide-controls {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.slide-controls button {
+  background: #202020;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .analysis-card {
+    flex-direction: column;
+  }
 }
