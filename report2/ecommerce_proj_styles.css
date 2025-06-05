@@ -112,7 +112,7 @@ nav{
 }
 
 .ecommerce-section .text-content h4 {
-  color: #ccc;
+  color: #fff;
   margin-bottom: 1rem;
   font-weight: 400;
   background-color: #4f4f50;
@@ -121,7 +121,7 @@ nav{
 }
 
 .ecommerce-section .text-content p {
-  color: #aaa;
+  color: #fff;
   line-height: 1.8;
   padding-top: 1rem;
   text-align: left;
@@ -201,7 +201,7 @@ section .header{
   padding-left: 1.5rem;
   margin: 0.5rem 0;
   list-style-type: disc;
-  color: #ccc; 
+  color: #fff; 
 }
 
 .card-list li {
@@ -210,7 +210,7 @@ section .header{
 
 
 .features .card p{
-    color: #ccc;
+    color: #fff;
     margin-bottom: 1rem;
 }
 
@@ -259,11 +259,11 @@ section .header{
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .kpi-intro{
-    color: #ccc;
+    color: #ddd;
     font-weight: 500;
     font-size: 1.2rem;
     margin: 2rem;
@@ -301,7 +301,7 @@ section .header{
 }
 
 .kpis .box p{
-    color: #ccc;
+    color: #fff;
     margin-bottom: 0.5rem;
 }
 
@@ -314,7 +314,7 @@ section .header{
 /* Analysis Section */
 
 .analysis-header  p{
-    color: #ccc;
+    color: #ddd;
     font-weight: 500;
     font-size: 1.2rem;
     margin: 2rem;
@@ -329,10 +329,10 @@ section .header{
   border: 3px solid;
   border-color: #4f4f50;
   border-radius: 10px;
-  padding: 2rem;
+  padding: 1rem;
   margin: 1rem;
   margin-bottom: 2rem;
-  width: 90%;
+  width: 95%;
 }
 
 .analysis-card:hover{
@@ -356,7 +356,7 @@ section .header{
 
 .card-content, .card-slideshow {
   flex: 1 1 300px;
-  min-width: 280px;
+  min-width: 300px;
 }
 
 .card-content strong{
@@ -379,7 +379,7 @@ section .header{
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   font-size: 1rem;
-  color: #ccc
+  color: #fff;
 }
 
 .card-content .stat-container{
@@ -391,16 +391,16 @@ section .header{
 }
 
 .stat-container .stat-card{
-    background-color: #0f0f0f;
-    padding: 0.5rem;
-    border: 3px solid;
-    border-color: #0f0f0f;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+  background-color: #0f0f0f;
+  padding: 0.5rem;
+  border: 3px solid;
+  border-color: #0f0f0f;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .stat-card p{
-  color:#ccc;
+  color:#fff;
 }
 
 .stat-card strong{
@@ -450,5 +450,11 @@ section .header{
 @media (max-width: 1100px) {
   .analysis-card {
     flex-direction: column;
+  }
+}
+
+@media (width < 700px) {
+    .card-content .stat-container {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
