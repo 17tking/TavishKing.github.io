@@ -127,6 +127,17 @@ nav{
   text-align: left;
 }
 
+.ecommerce-section .text-content strong {
+  color:#db7979;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.ecommerce-section .text-content strong:hover {
+  font-size: 1.3rem;
+  color: #f15454;
+}
+
 .ecommerce-section .image-content {
   text-align: center;
 }
@@ -324,7 +335,7 @@ section .header{
 
 .card-content {
   color: #fff;
-  margin: 2rem;
+  margin: 1rem;
 }
 
 .card-content h3 {
@@ -346,18 +357,14 @@ section .header{
 }
 
 
-.card-content, .card-slideshow {
-  flex: 1 1 300px;
-  min-width: 300px;
-}
-
 .card-content .stat-container{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0rem;
   padding-top: 0.5rem;
   padding-bottom: 2rem;
-  max-width: 800px
+  max-width: 800px;
+  margin: 0rem;
 }
 
 .stat-container .stat-card{
