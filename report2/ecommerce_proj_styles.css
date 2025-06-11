@@ -153,9 +153,10 @@ nav{
 section .header{
     margin-bottom: 0rem;
     color: #fff;
-    margin: 2rem;
+    margin: 1rem;
     font-size: 2.25rem;
     font-weight: 600;
+    padding-top: 3rem
 }
 
 .features{
@@ -266,7 +267,7 @@ section .header{
     color: #ddd;
     font-weight: 500;
     font-size: 1.2rem;
-    margin: 2rem;
+    margin: 1rem;
     max-width: 600px;
 }
 
@@ -318,132 +319,99 @@ section .header{
     font-weight: 500;
     font-size: 1.2rem;
     margin: 2rem;
-    max-width: 600px;
-}
-
-.analysis-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  background-color: #27272a;
-  border: 3px solid;
-  border-color: #4f4f50;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1rem;
-  margin-bottom: 4rem;
-  width: 90%;
-}
-
-.analysis-card:hover{
-    background-color: #252424;
+    max-width: 800px;
 }
 
 .card-content {
   color: #fff;
+  margin: 2rem;
 }
 
 .card-content h3 {
     display: inline-block;
-    background-color: #C28458;
+    background-color: #2B50AA;
     border-radius: 10px;
     padding: 3px 10px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #fff;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
+
+.card-content h4 {
+  color: #ddd;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
 
 .card-content, .card-slideshow {
   flex: 1 1 300px;
   min-width: 300px;
 }
 
-.card-content strong{
-  color:#C28458;
+.card-content .stat-container{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0rem;
+  padding-top: 0.5rem;
+  padding-bottom: 2rem;
+  max-width: 800px
+}
+
+.stat-container .stat-card{
+  background-color: #333335;
+  padding: 0.5rem;
+  border: 3px solid;
+  border-color: #333335;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.stat-card h4 {
+  font-weight: 600;
+  color: #fff;
+  padding-bottom: 0rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  background-color: #658aa1;
+  border-radius: 5px;
+  padding: 0.5rem;
+  width: max-content;
+}
+
+.stat-card h5{
+  color: #fff;
+  font-size: 1.2rem;
   text-decoration: underline;
 }
 
-.card-content ul {
-  padding-left: 0.5rem;
-  list-style: none;
-  line-height: 1.6;
-  font-size: 1.3rem;
-}
-
-.card-content p{
+.stat-card p{
   padding-top: 0.5rem;
   padding-bottom: 1rem;
   font-size: 1rem;
   color: #fff;
 }
 
-.card-content .stat-container{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-}
-
-.stat-container .stat-card{
-  background-color: #0f0f0f;
-  padding: 0.5rem;
-  border: 3px solid;
-  border-color: #0f0f0f;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.stat-card p{
+.stat-card li{
   color:#fff;
+  font-size: 1rem;
+  list-style-type: disc;
+  margin: 1rem;
 }
 
 .stat-card strong{
   text-decoration: none;
-  color: #1c77c3;
-  font-size: 2rem;
+  color: #659ecc;
+  background-color: none;
 }
 
-.stat-card:hover{
-  background-color: #38383b;
-  border-color: #38383b;
+.stat-card img.plot {
+  border-radius: 10px;
 }
 
-.card-slideshow {
-  position: relative;
-  width: 100%;
-  margin: auto;
-}
-
-.card-slideshow .slide {
-  width: 100%;
-  display: none;
-  border-radius: 5px;
-}
-
-.card-slideshow .slide.active {
-  display: block;
-}
-
-.slide-controls {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-.slide-controls button {
-  background: #202020;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  margin-left: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .analysis-card {
     flex-direction: column;
   }
@@ -452,5 +420,12 @@ section .header{
 @media (width < 700px) {
     .card-content .stat-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (width > 1400px) {
+  body{
+    margin-left: 10rem;
+    margin-right: 10rem;
   }
 }
