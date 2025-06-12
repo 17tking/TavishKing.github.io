@@ -415,7 +415,8 @@ section .header{
 }
 
 .stat-card img.plot {
-  border-radius: 10px;
+  padding-top: 1.5rem;
+  border-radius: 0px;
 }
 
 @media (max-width: 1200px) {
