@@ -7,7 +7,9 @@
 library(tidyverse)
 library(ggthemes)
 library(scales)
-
+library(gtsummary)
+library(gt)
+options(scipen=999)
 
 #################################
 # multiple and single categories
@@ -123,7 +125,78 @@ paste0("These top 4 categories account for ", round(top4_pct, 1), "% of all intr
 # pair counts
 ##############
 paircounts <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_paircounts.csv")
+top_cat_pairs <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_top_cat_pairs.csv")
 
+paircounts_top10 <- paircounts %>% 
+  mutate(pairlabel = paste(cat1, "&", cat2)) %>% 
+  arrange(desc(paircount)) %>% 
+  slice(1:10)
+
+# Bar plot: top 10 most frequently paired category purchases
+kpi1_top_category_pairs <- ggplot(paircounts_top10,
+       aes(x=reorder(pairlabel, paircount), 
+           y=paircount))+
+  geom_bar(stat="identity",
+           fill = "palegreen4")+
+  geom_text(aes(label = paircount),
+                hjust = 1.5,
+                size = 3.5,
+                color = "white")+
+  annotate(geom = "text",
+           label = "What do the Support and \nLift values tell us?",
+           x = 4,
+           y = 50,
+           size = 4.5)+
+  coord_flip()+
+  theme_bw()+
+  theme(panel.grid.major.y = element_blank(),
+        panel.grid.minor.y = element_blank(),
+        legend.position = "none",
+        plot.title = element_text(face="bold", size=14),
+        plot.subtitle = element_text(size=10, face="italic"))+
+  labs(title = "Top Product Category Pairings",
+       subtitle = "The 10 most common combinations purchased together in a single order",
+       x = "",
+       y = "Number of Orders")
+
+ggsave(plot = kpi1_top_category_pairs,
+       filename = "R/plots/kpi1_top_category_pairs.jpg",
+       height = 5,
+       width = 8)
+
+
+top_10_pair_table <- top_cat_pairs %>% 
+  arrange(desc(pairtransactioncount)) %>% 
+  slice(1:10) %>% 
+  mutate(CategoryA = category_a,
+         CategoryB = category_b,
+         Support = round(supportab*100, 4),
+         Lift = lift) %>% 
+  select(-c(1:7))
+
+
+gt_lift_table <- top_10_pair_table %>% 
+  gt() %>% 
+  data_color(
+    columns = vars(Lift),
+    colors = scales::col_numeric(
+      palette = c("seashell1", "darkgreen"),
+      domain = range(top_10_pair_table$Lift))) %>% 
+  data_color(
+    columns = vars(Support),
+    colors = scales::col_numeric(
+      palette = c("seashell1", "darkgreen"),
+      domain = range(top_10_pair_table$Support))) %>% 
+  tab_header(
+    title = md("**Product Category Affinity Table**"),
+    subtitle = md("Support = % of transactions \n 
+Lift = pairing strength")) %>% 
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything()))
+
+gt_lift_table
+#manually saved table for easier formatting...
 
 
 #################
@@ -131,7 +204,7 @@ paircounts <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_paircounts.c
 #################
 support_values <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_support_values.csv")
 # cumulative %
-cum_support <- sum(support_values$support)*100
+cum_support <- sum(support_values$support)
 
 # top 10 %
 top_support <- support_values %>% 
@@ -142,11 +215,10 @@ top_support <- support_values %>%
 
 #support % variable
 support_values <- support_values %>% 
-  mutate(support_pct = support*100) %>% 
-  mutate(top_category = if_else(rank(-support_pct) <=10, "top", "other"))
+  mutate(top_category = if_else(rank(-support) <=10, "top", "other"))
 
 # Figure 1-horizontal bar chart
-ggplot(support_values, aes(x=reorder(product_category, support_pct), y=support_pct, fill=top_category))+
+ggplot(support_values, aes(x=reorder(product_category, support), y=support, fill=top_category))+
   geom_col()+
   coord_flip()+
   scale_fill_manual(values = c("top"="dodgerblue4", "other"="gray40"))+
@@ -159,4 +231,4 @@ ggplot(support_values, aes(x=reorder(product_category, support_pct), y=support_p
 ################
 # top cat pairs
 ################
-top_cat_pairs <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_top_cat_pairs.csv")
+# this table was loaded in the 'pair counts' section :)

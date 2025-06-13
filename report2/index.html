@@ -190,16 +190,37 @@
 
         <div class="stat-container">
           <div class="stat-card">
-            <h4>Intra-Category Diversity</h4>
+            <h4>Intra-Category Diversity is Present</h4>
             <p>&#9925; The bright side: while most shoppers stick to a single category per order, they often explore within that category; 
               purchasing multiple distinct products in one go.</p>
             <p>&#x2B50; Use category-specific promotions (e.g., "Get 3 for the price of 2" in top-performing categories). </p>
             <p>&#x2757;  Depth over breadth. This behavior allows us to curate discounts, upsells, and bundles around intra-category needs.</p>
             <h5>The Stats:</h5>
             <li><strong>2,541 orders</strong> included multiple different products within just one category</li>
-              <li><strong>Food</strong>, <strong>drinks</strong>, and <strong>construction tools</strong> showed the highest intra-category variety; averaging nearly <strong>3 unique products per order</strong></li>
+            <li><strong>Food</strong>, <strong>drinks</strong>, and <strong>construction tools</strong> showed the highest intra-category variety; averaging nearly <strong>3 unique products per order</strong></li>
             <li>These <strong> top 4</strong> categories account for <strong> 9.8% </strong> of all intra-category variety (out of 51 total categories)</li>
             <img src="R/plots/kpi1_single_category_plot.jpg" class="plot" alt="" />  
+          </div>
+        </div>
+
+        <div class="stat-container">
+          <div class="stat-card">
+            <h4>Home Products are Selling Together, but is it Important?</h4>
+            <p>&#x2753; I was curious to see how much "statistical value" our most common paired categories were. To see that, 
+              I calculated Support and Lift Values.</p>
+            <p>&#x2B50; Improve our Cross-Sell Tactics. Low support shows most pairings are random. Avoid relying on popularity alone.
+              Focus on meaningful associations.</p>
+            <p>&#x2B50; Personalize Recommendations. Advanced algorithms can use customer-level data to create smarter product suggestions.</p>
+            <p>&#x2757; Support values are <strong>low</strong>, which makes sense given the data. Out of 99,349 distinct orders, only a small fraction included product pairings from different categories. This indicates that cross-category purchases are relatively rare in this dataset.</p>
+            <p>&#x2757; While these product pairings top the list in terms of sheer volume, <strong>Lift</strong> reveals a deeper insight. 
+              Most of these high-frequency pairings occur simply because the categories are popular and not because they’re commonly bought together.</p>
+            <p>&#128284; Next, we will look at the product pairings <strong>(> 1 purchase)</strong> with the highest Lift values! </p>
+              <h5>The Stats:</h5>
+            <li>Only the combination of <strong>bed_bath_table</strong> and <strong>home_comfort</strong> shows a true positive association <strong>(Lift = 1.146)</strong>. 
+              This means shoppers are <em> <strong>14.6% more likely</strong></em> to buy these two categories together than we’d expect by chance</li>
+            <li>The top pairings (bed_bath_table & furniture_decor) share <strong> only 0.07%</strong> of all transactions in this data. Rare, rare, rare!</li>
+            <img src="R/plots/kpi1_top_category_pairs.jpg" class="plot" alt="" />
+            <img src="R/plots/kpi1_heat_table_support_lift.png" class="plot" alt="" />   
           </div>
         </div>
       </ul>
