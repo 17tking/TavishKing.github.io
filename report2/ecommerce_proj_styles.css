@@ -417,6 +417,7 @@ section .header{
   text-decoration: none;
   color: #659ecc;
   background-color: none;
+  font-weight: 400;
 }
 
 .stat-card img.plot {

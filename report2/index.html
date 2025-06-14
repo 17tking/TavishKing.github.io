@@ -168,8 +168,7 @@
         <div class="stat-container">
           <div class="stat-card">
             <h4>Shoppers Aren't Branching Out!</h4>
-            <p>&#128273; Cart variety is surprisingly limited. While customers do buy from multiple categories, nearly all stop at just two.
-              That signals a narrow shopping mission, or missed cross-sell opportunities.</p>
+            <p>&#128273; Cart variety is surprisingly limited. While customers do buy from multiple categories, nearly all stop at just two.</p>
             <p>&#x2753; Could the site's navigation, filtering, or category layout be preventing deeper category engagement?</p>
             <p>&#x2B50; Enrich the online shopping experience. Highlight seasonal bundles and showcase trending purchases right on the home page.</p>
             <p>&#x2B50; Leverage existing behavior: when customers do buy across categories, build on it! Use stronger recommendation language like <em>“People who bought this also added…”</em> to encourage smarter upsells.</p>
@@ -191,36 +190,46 @@
         <div class="stat-container">
           <div class="stat-card">
             <h4>Intra-Category Diversity is Present</h4>
-            <p>&#9925; The bright side: while most shoppers stick to a single category per order, they often explore within that category; 
+            <p>&#128273; The bright side: while most shoppers stick to a single category per order, they often explore within that category; 
               purchasing multiple distinct products in one go.</p>
             <p>&#x2B50; Use category-specific promotions (e.g., "Get 3 for the price of 2" in top-performing categories). </p>
             <p>&#x2757;  Depth over breadth. This behavior allows us to curate discounts, upsells, and bundles around intra-category needs.</p>
             <h5>The Stats:</h5>
             <li><strong>2,541 orders</strong> included multiple different products within just one category</li>
             <li><strong>Food</strong>, <strong>drinks</strong>, and <strong>construction tools</strong> showed the highest intra-category variety; averaging nearly <strong>3 unique products per order</strong></li>
-            <li>These <strong> top 4</strong> categories account for <strong> 9.8% </strong> of all intra-category variety (out of 51 total categories)</li>
+            <li>These <strong> top 4</strong> categories account for <strong> 9.8% </strong> of all intra-category variety</li>
             <img src="R/plots/kpi1_single_category_plot.jpg" class="plot" alt="" />  
           </div>
         </div>
 
         <div class="stat-container">
           <div class="stat-card">
-            <h4>Popular Categories, Weak Connections</h4>
-            <p>&#x2753; I was curious to see how much "statistical value" our most common paired categories were. To see that, 
-              I calculated Support and Lift Values.</p>
-            <p>&#x2B50; Improve our Cross-Sell Tactics. Low support shows most pairings are random. Avoid relying on popularity alone.
+            <h4>Popular Pairings, Weak Affinity </h4>
+            <p>&#128273; While these product pairings top the list in terms of sheer volume, most of these high-frequency pairings occur simply because the categories are popular and not because they’re commonly bought together.</p>
+            <p>&#x2B50; Improve our cross-sell tactics. Low support shows most pairings are random. Avoid relying on popularity alone.
               Focus on meaningful associations.</p>
-            <p>&#x2B50; Personalize Recommendations. Advanced algorithms can use customer-level data to create smarter product suggestions.</p>
-            <p>&#x2757; Support values are <strong>low</strong>, which makes sense given the data. Out of 99,349 distinct orders, only a small fraction included product pairings from different categories. This indicates that cross-category purchases are relatively rare in this dataset.</p>
-            <p>&#x2757; While these product pairings top the list in terms of sheer volume, <strong>Lift</strong> reveals a deeper insight. 
-              Most of these high-frequency pairings occur simply because the categories are popular and not because they’re commonly bought together.</p>
-            <p>&#128284; Next, we will look at the product pairings <strong>(> 1 purchase)</strong> with the highest Lift values! </p>
+            <p>&#x2B50; Personalize recommendations. Advanced algorithms can use customer-level data to create smarter product suggestions.</p>
+            <p>&#128284; Next, we will look at the product pairings <strong>(greater than 1 purchase)</strong> with the highest Lift values! </p>
               <h5>The Stats:</h5>
-            <li>Only the combination of <strong>bed_bath_table</strong> and <strong>home_comfort</strong> shows a true positive association <strong>(Lift = 1.146)</strong>. 
+            <li>Only the combination of <strong><code>bed_bath_table</code></strong> and <strong><code>home_comfort</code></strong> shows a true positive association <strong>(Lift = 1.146)</strong>. 
               This means shoppers are <em> <strong>14.6% more likely</strong></em> to buy these two categories together than we’d expect by chance</li>
-            <li>The top pairings (bed_bath_table & furniture_decor) share <strong> only 0.07%</strong> of all transactions in this data. Rare, rare, rare!</li>
+            <li>The top pairings (<strong><code>bed_bath_table</code></strong> & <strong><code>furniture_decor</code></strong>) share <strong> only 0.07%</strong> of all transactions in this data. Rare, rare, rare!</li>
+            <img src="R/plots/kpi1_cat_popularity.jpg" class="plot" alt="" />
             <img src="R/plots/kpi1_top_category_pairs.jpg" class="plot" alt="" />
             <img src="R/plots/kpi1_heat_table_support_lift.png" class="plot" alt="" />   
+          </div>
+        </div>
+
+        <div class="stat-container">
+          <div class="stat-card">
+            <h4>Revamp the Recommendation Engine</h4>
+            <p>&#128273; The results are disappointing. First, we have very few multi-category orders (785 to be exact). Second, most category pairings are just due to random chance (lift values < 1). This means either the customer came to the site with a set list of products to buy or our site fails to offer the customer a helpful shopping experience.</p>
+            <p>&#x2B50; Aggregate user behavior into Affinity Profiles. Cluster customers by their shopping behavior. Even if they only buy from one category at a time, what <em>types</em> of categories do they browse before checkout? Segment and tailor content based on those signals.</p>
+            <p>&#x2B50; Introduce “Complete the Set” Bundles: For example, prompt customers buying from <code>bed_bath_table</code> to add related <code>home_comfort</code> items (pillows, throws, lamps) before checkout.</p>
+              <h5>The Stats:</h5>
+            <li>At a glance, a <strong> Lift of 13.38</strong> is strong, but with only 2 occurrences, it does not yet provide strong enough evidence to say this is actionable</li>
+            <li>Customers who are buying <strong><code>bed_bath_table</code></strong> products are 15% more likely to add <strong><code>home_comfort</code></strong> products to their cart<strong><em>(Support = 0.043, Lift = 1.15)</em></strong></li>
+            <img src="R/plots/kpi1_heat_table_top_lift_pairs.png" class="plot" alt="" /> 
           </div>
         </div>
       </ul>
