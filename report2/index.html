@@ -17,8 +17,8 @@
 
     <ul class="nav-links">
       <li id="link1" class="link"><a href="#">Overview</a></li>
-      <li id="link2" class="link"><a href="#">KPIs</a></li>
-      <li id="link3" class="link"><a href="#">Analysis</a></li>
+      <li id="link2" class="link"><a href="#">EDA</a></li>
+      <li id="link3" class="link"><a href="#">Main Analysis</a></li>
       <li id="link4" class="link"><a href="#">Conclusions</a></li>
     </ul>
 
@@ -69,6 +69,20 @@
             </p>
             <a href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce" target="_blank">View Data Source <i class="ri-arrow-right-line"></i></a>
         </div>
+
+        <div class="card">
+            <span><i class="ri-shopping-basket-2-line"></i></span>
+            <h4>KPIs</h4>
+            <p>I will drive action in this e-commerce business by answering stakeholder-like questions regarding...</p>
+            <ul class="card-list">
+                <li>Product Affinity</li>
+                <li>Product Reviews</li>
+                <li>Customer Retention</li>
+                <li>Sales by Location</li>
+                <li>Logistics Analysis</li>
+            </ul>
+
+        </div>
         <div class="card">
             <span><i class="ri-database-2-line"></i></span>
             <h4>SQL </h4>
@@ -105,51 +119,23 @@
     </div>
 </section>
 
-<!--KPI Section-->
+<!--EDA Section-->
 <section class="container">
-    <h2 class="header">KEY PERFORMANCE INDICATORS</h2>
-    <h4 class="kpi-intro">
-    <span><i class="ri-team-line"></i></span>
-    I was asked to analyze key areas of our e-commerce performance 
-    to help different teams make informed decisions.
-    Below are the KPIs I explored <span><i class="ri-arrow-down-line"></i></span>
-    </h4>
-    <div class="kpis">
-      <div class="box">
-                  <span><i class="ri-shopping-basket-2-line"></i> Product Affinity</span>
-            <p>
-            Identify which product categories are frequently purchased together 
-            to inform cross-sell strategies and enhance the recommendation engine.
-            </p>
-      </div>
-      <div class="box">
-                  <span><i class="ri-star-fill"></i> Product Reviews</span>
-            <p>
-            Analyze review volume and average ratings to determine which products and 
-            categories are resonating with customers, and where improvements may be needed.
-            </p>
-      </div>
-      <div class="box">
-                  <span><i class="ri-user-add-fill"></i> Customer Retention</span>
-            <p>
-            Measure repeat purchase behavior and time between orders to help assess 
-            the effectiveness of retention campaigns.
-            </p>
-      </div>
-      <div class="box">
-                  <span><i class="ri-road-map-fill"></i> Sales by Location</span>
-            <p>
-            Examine geographic performance trends to support regional ad targeting strategies.
-            </p>
-      </div>
-      <div class="box">
-                  <span><i class="ri-truck-fill"></i> Logistics Analysis</span>
-            <p>
-            Analyze delivery timelines and shipping performance to uncover 
-            bottlenecks and fulfillment efficiency.
-            </p>
-      </div>     
+  <div class="eda-header">
+    <h2 class="header">Exploratory Data Analysis</h2>
+    <p>Developing a stronger narrative to my main analysis</p>
+  </div>
+
+  <div class="eda-card">
+    <img id="edaPlot" src="R/plots/kpi1_10_highest.jpg" alt="EDA Plot" class="eda-plot">
+  
+    <div class="eda-controls">
+      <button id="prevBtn" onclick="changePlot(-1)" disabled>&#10094;</button>
+      <button id="nextBtn" onclick="changePlot(1)">&#10095;</button>
     </div>
+  </div>
+
+
 </section>
 
 <!--Analysis Section-->
@@ -162,77 +148,19 @@
 
   <!--Product Affinity Analysis Card-->
     <div class="card-content">
-      <h3><span><i class="ri-shopping-basket-2-line"></i></span> Product Affinity</h3>
-      <h4>Revealing the customer's shopping list </h4>
-      <ul>
-        <div class="stat-container">
+      <div class="stat-container">
           <div class="stat-card">
-            <h4>Shoppers Aren't Branching Out!</h4>
-            <p>&#128273; Cart variety is surprisingly limited. While customers do buy from multiple categories, nearly all stop at just two.</p>
-            <p>&#x2753; Could the site's navigation, filtering, or category layout be preventing deeper category engagement?</p>
-            <p>&#x2B50; Enrich the online shopping experience. Highlight seasonal bundles and showcase trending purchases right on the home page.</p>
-            <p>&#x2B50; Leverage existing behavior: when customers do buy across categories, build on it! Use stronger recommendation language like <em>“People who bought this also added…”</em> to encourage smarter upsells.</p>
-            <p>&#x2757; Customers are browsing fast and buying narrowly. A more personalized shopping journey could keep them engaged longer and increase variety in their carts.</p>
-            <h5>The Stats:</h5>
-            <li>
-              <strong>785</strong> of 99,439 orders were multi-category purchases
-            </li>
-            <li>
-              <strong>No order</strong> included more than <strong>  3 distinct categories </strong> (range: 2-3)
-            </li>
-            <li>
-              Only <strong> 2.3% </strong> of multi-category purchases included<strong> 3 different categories</strong>
-            </li>
-            <img src="R/plots/kpi1_multiple_category_plot.jpg" class="plot" alt="" />  
-          </div>
-        </div>
-
-        <div class="stat-container">
-          <div class="stat-card">
-            <h4>Intra-Category Diversity is Present</h4>
-            <p>&#128273; The bright side: while most shoppers stick to a single category per order, they often explore within that category; 
-              purchasing multiple distinct products in one go.</p>
-            <p>&#x2B50; Use category-specific promotions (e.g., "Get 3 for the price of 2" in top-performing categories). </p>
-            <p>&#x2757;  Depth over breadth. This behavior allows us to curate discounts, upsells, and bundles around intra-category needs.</p>
-            <h5>The Stats:</h5>
-            <li><strong>2,541 orders</strong> included multiple different products within just one category</li>
-            <li><strong>Food</strong>, <strong>drinks</strong>, and <strong>construction tools</strong> showed the highest intra-category variety; averaging nearly <strong>3 unique products per order</strong></li>
-            <li>These <strong> top 4</strong> categories account for <strong> 9.8% </strong> of all intra-category variety</li>
-            <img src="R/plots/kpi1_single_category_plot.jpg" class="plot" alt="" />  
-          </div>
-        </div>
-
-        <div class="stat-container">
-          <div class="stat-card">
-            <h4>Popular Pairings, Weak Affinity </h4>
-            <p>&#128273; While these product pairings top the list in terms of sheer volume, most of these high-frequency pairings occur simply because the categories are popular and not because they’re commonly bought together.</p>
-            <p>&#x2B50; Improve our cross-sell tactics. Low support shows most pairings are random. Avoid relying on popularity alone.
-              Focus on meaningful associations.</p>
-            <p>&#x2B50; Personalize recommendations. Advanced algorithms can use customer-level data to create smarter product suggestions.</p>
-            <p>&#128284; Next, we will look at the product pairings <strong>(greater than 1 purchase)</strong> with the highest Lift values! </p>
-              <h5>The Stats:</h5>
-            <li>Only the combination of <strong><code>bed_bath_table</code></strong> and <strong><code>home_comfort</code></strong> shows a true positive association <strong>(Lift = 1.146)</strong>. 
-              This means shoppers are <em> <strong>14.6% more likely</strong></em> to buy these two categories together than we’d expect by chance</li>
-            <li>The top pairings (<strong><code>bed_bath_table</code></strong> & <strong><code>furniture_decor</code></strong>) share <strong> only 0.07%</strong> of all transactions in this data. Rare, rare, rare!</li>
-            <img src="R/plots/kpi1_cat_popularity.jpg" class="plot" alt="" />
-            <img src="R/plots/kpi1_top_category_pairs.jpg" class="plot" alt="" />
-            <img src="R/plots/kpi1_heat_table_support_lift.png" class="plot" alt="" />   
-          </div>
-        </div>
-
-        <div class="stat-container">
-          <div class="stat-card">
-            <h4>Revamp the Recommendation Engine</h4>
+          <h3><span><i class="ri-shopping-basket-2-line"></i></span> Product Affinity</h3>
             <p>&#128273; The results are disappointing. First, we have very few multi-category orders (785 to be exact). Second, most category pairings are just due to random chance (lift values < 1). This means either the customer came to the site with a set list of products to buy or our site fails to offer the customer a helpful shopping experience.</p>
-            <p>&#x2B50; Aggregate user behavior into Affinity Profiles. Cluster customers by their shopping behavior. Even if they only buy from one category at a time, what <em>types</em> of categories do they browse before checkout? Segment and tailor content based on those signals.</p>
+            <p>&#x2B50; Cluster customers by their shopping behavior. Even if they only buy from one category at a time, what <em>types</em> of categories do they browse before checkout? Segment and tailor content based on those signals.</p>
             <p>&#x2B50; Introduce “Complete the Set” Bundles: For example, prompt customers buying from <code>bed_bath_table</code> to add related <code>home_comfort</code> items (pillows, throws, lamps) before checkout.</p>
+            <p>&#x2757; Home decor products are a strong suit. When customers are buying one category of home decor, they are probably going to buy another category related to home decor. We can begin our application of recommendation engines here and see how it fares.</p>
               <h5>The Stats:</h5>
             <li>At a glance, a <strong> Lift of 13.38</strong> is strong, but with only 2 occurrences, it does not yet provide strong enough evidence to say this is actionable</li>
             <li>Customers who are buying <strong><code>bed_bath_table</code></strong> products are 15% more likely to add <strong><code>home_comfort</code></strong> products to their cart<strong><em>(Support = 0.043, Lift = 1.15)</em></strong></li>
             <img src="R/plots/kpi1_heat_table_top_lift_pairs.png" class="plot" alt="" /> 
           </div>
         </div>
-      </ul>
     </div>
 </section>
 

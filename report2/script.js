@@ -29,3 +29,37 @@ link4.addEventListener('click', () => {
     scrollToElement('.header', 3);
 });
 
+
+// EDA slideshow
+
+const plotImages = [
+  "R/plots/kpi1_10_highest.jpg",
+  "R/plots/kpi1_10_lowest.jpg",
+  "R/plots/kpi1_multiple_category_plot.jpg",
+  "R/plots/kpi1_single_category_plot.jpg",
+  "R/plots/kpi1_top_category_pairs.jpg",
+  "R/plots/kpi1_heat_table_support_lift.png",
+  "R/plots/kpi1_cat_popularity.jpg"
+];
+
+let currentIndex = 0;
+
+function updatePlot() {
+  const img = document.getElementById("edaPlot");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  img.src = plotImages[currentIndex];
+
+  // Disable buttons when at start or end
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex === plotImages.length - 1;
+}
+
+function changePlot(direction) {
+  currentIndex += direction;
+  updatePlot();
+}
+
+// Initialize
+updatePlot();
