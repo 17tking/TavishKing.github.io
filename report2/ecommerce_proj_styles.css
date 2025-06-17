@@ -334,7 +334,7 @@ section .header{
     color: #ddd;
     font-weight: 500;
     font-size: 1.2rem;
-    margin: 2rem;
+    margin: 1rem;
     max-width: 800px;
 }
 
@@ -420,9 +420,9 @@ section .header{
 
 .stat-card strong{
   text-decoration: none;
-  color: #659ecc;
+  color: #60a6e0;
   background-color: none;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .stat-card img.plot {

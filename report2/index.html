@@ -141,8 +141,8 @@
 <!--Analysis Section-->
 <section class="container">
   <div class="analysis-header">
-    <h2 class="header">DATA ANALYSIS</h2>
-    <p>
+    <h2 class="header">MAIN ANALYSIS</h2>
+    <p>Uncovering insights, driving action
     </p>
   </div>
 
@@ -151,14 +151,33 @@
       <div class="stat-container">
           <div class="stat-card">
           <h3><span><i class="ri-shopping-basket-2-line"></i></span> Product Affinity</h3>
-            <p>&#128273; The results are disappointing. First, we have very few multi-category orders (785 to be exact). Second, most category pairings are just due to random chance (lift values < 1). This means either the customer came to the site with a set list of products to buy or our site fails to offer the customer a helpful shopping experience.</p>
-            <p>&#x2B50; Cluster customers by their shopping behavior. Even if they only buy from one category at a time, what <em>types</em> of categories do they browse before checkout? Segment and tailor content based on those signals.</p>
-            <p>&#x2B50; Introduce “Complete the Set” Bundles: For example, prompt customers buying from <code>bed_bath_table</code> to add related <code>home_comfort</code> items (pillows, throws, lamps) before checkout.</p>
-            <p>&#x2757; Home decor products are a strong suit. When customers are buying one category of home decor, they are probably going to buy another category related to home decor. We can begin our application of recommendation engines here and see how it fares.</p>
+            <p>&#10067; <strong>The Stakeholder's Question:</strong> Are there any product combinations we should be promoting together because customers often buy them at the same time on our website?</p>
+            <p>&#x2757; <strong>The Answer:</strong> Some home decor categories are selling together, but overall product affinity is weak. Most category pairings show low or negative Lift values. This means customers aren't naturally bundling items.</p>
+            <p>&#128073; Shoppers aren't branching out! There is a need to add/improve our site's recommendation engine (e.g. "Customers who bought X, also buy Y") to guide smarter cross-category purchases.</p>
+            <p>&#128073; Elevate the online shopping experience! To boost affinity, consider promoting trending combinations on the homepage, offer seasonal bundles, or highlight frequently paired items during checkout.</p>
               <h5>The Stats:</h5>
-            <li>At a glance, a <strong> Lift of 13.38</strong> is strong, but with only 2 occurrences, it does not yet provide strong enough evidence to say this is actionable</li>
-            <li>Customers who are buying <strong><code>bed_bath_table</code></strong> products are 15% more likely to add <strong><code>home_comfort</code></strong> products to their cart<strong><em>(Support = 0.043, Lift = 1.15)</em></strong></li>
+            <li><strong>Product affinity is generally low.</strong> Only 785 of 99,439 distinct orders had multi-category purchases (0.8%)</li>
+            <li><strong><code>bed_bath_table</code></strong> and <strong><code>home_comfort</code></strong> have a positive Lift association (Lift = 1.146). Meaning that when a customer buys <strong><code>bed_bath_table</code></strong> products, they are <em>14.6% more likely</em> to buy <strong><code>home_comfort</code></strong> products</li>
+            <li><strong>The 10 most popular individual categories make up 62.7% of order purchases.</strong> Uncover trending cross-category purchases among these categories (<em>see "Top Individual Categories" plot above</em>)</li>
             <img src="R/plots/kpi1_heat_table_top_lift_pairs.png" class="plot" alt="" /> 
+          </div>
+        </div>
+    </div>
+
+
+    <div class="card-content">
+      <div class="stat-container">
+          <div class="stat-card">
+          <h3><span><i class="ri-star-fill"></i></span> Product Reviews</h3>
+            <p>&#10067; <strong>The Stakeholder's Question:</strong> What are customers saying about our products, and is there anything we should be fixing or highlighting based on their feedback?</p>
+            <p>&#x2757; </p>
+            <p>&#128073; </p>
+            <p>&#128073; </p>
+              <h5>The Stats:</h5>
+            <li></li>
+            <li></li>
+            <li></li>
+            <img src="R/plots/" class="plot" alt="" /> 
           </div>
         </div>
     </div>

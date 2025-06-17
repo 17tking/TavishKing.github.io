@@ -33,13 +33,15 @@ link4.addEventListener('click', () => {
 // EDA slideshow
 
 const plotImages = [
+  "Images/PRODUCT AFFINITY.jpg",
   "R/plots/kpi1_10_highest.jpg",
   "R/plots/kpi1_10_lowest.jpg",
   "R/plots/kpi1_multiple_category_plot.jpg",
   "R/plots/kpi1_single_category_plot.jpg",
   "R/plots/kpi1_top_category_pairs.jpg",
   "R/plots/kpi1_heat_table_support_lift.png",
-  "R/plots/kpi1_cat_popularity.jpg"
+  "R/plots/kpi1_cat_popularity.jpg",
+  "Images/PRODUCT REVIEWS.jpg"
 ];
 
 let currentIndex = 0;

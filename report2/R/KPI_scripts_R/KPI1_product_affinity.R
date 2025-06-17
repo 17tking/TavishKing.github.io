@@ -111,7 +111,7 @@ kpi1_multiple_category_plot <- ggplot(pct_variety,
   geom_bar(stat="identity",
            width = 0.6)+
   geom_text(label = "Only 2.3% of orders contain 3 \n different product categories",
-            hjust = -0.15,
+            hjust = -0.19,
             size = 5)+
   scale_y_continuous(labels = label_number(suffix = "%"),
                      breaks = seq(0, 100, 25),
@@ -133,7 +133,7 @@ kpi1_multiple_category_plot <- ggplot(pct_variety,
 ggsave(plot = kpi1_multiple_category_plot,
        filename = "R/plots/kpi1_multiple_category_plot.jpg",
        height = 5,
-       width = 6)
+       width = 8)
 
 
 ### identify single product categories wit diff product id's
