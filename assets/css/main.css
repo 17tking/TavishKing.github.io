@@ -4687,3 +4687,23 @@ input, select, textarea {
 		}
 
 	}
+
+.tool-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 1em;
+  flex-wrap: wrap;
+}
+
+.tool-icons img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Simple hover effect */
+.tool-icons img:hover {
+  transform: scale(1.2);
+}
