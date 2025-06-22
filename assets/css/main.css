@@ -4694,3 +4694,8 @@ input, select, textarea {
 
 	}
 
+	@media screen (width > 1000px) {
+		.intro p{
+			margin: 4rem;
+		}
+	}
