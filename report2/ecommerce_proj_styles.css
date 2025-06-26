@@ -70,6 +70,7 @@ nav {
 .link a:hover {
   border-color: #3b3b3b;
   background-color: #4f4f50;
+  text-shadow: 1px 2px 0 #27272b;
 }
 
 .btn {
@@ -94,6 +95,7 @@ h1 {
   font-size: 3rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  text-shadow: 0 6px 2px black;
 }
 
 .ecommerce-section {
@@ -108,7 +110,7 @@ h1 {
 
 .ecommerce-section .text-content h2 {
   font-size: 1.75rem;
-  line-height: 3.5rem;
+  line-height: 2.5rem;
   margin-bottom: 0rem;
   font-weight: 600;
 }
@@ -234,6 +236,7 @@ h1 {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.2s ease;
+  margin-bottom: 3rem;
 }
 
 .eda-controls button:hover:not(:disabled) {
@@ -252,9 +255,9 @@ h1 {
 }
 
 .analysis-container h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  color: #1f85c9;
+  color: #fff;
 }
 
 .analysis-section {
@@ -309,26 +312,10 @@ h1 {
 .section.plot img {
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease;
+  border-radius: 5px;
+  margin-bottom: 3.5rem;
 }
 
-.section.plot,
-.analysis-section {
-  transition: all 0.3s ease;
-}
-
-.section.plot:hover {
-  z-index: 1;
-}
-
-.section.plot:hover img {
-  transform: scale(1.1);
-}
-
-.section.plot:hover ~ .analysis-section {
-  transform: scale(0.95);
-  opacity: 0.85;
-}
 
 /* Media Queries  */
 @media (max-width: 768px) {
@@ -364,9 +351,13 @@ h1 {
   }
 }
 
-@media (width < 600px) {
+@media (width < 775px) {
   header .image::before {
     display: none;
+  }
+
+  .ecommerce-section .text-content p {
+    text-align: center;
   }
 
   .features {

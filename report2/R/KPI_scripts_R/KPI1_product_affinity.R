@@ -8,7 +8,7 @@ library(tidyverse)  #data manipulation + ggplot2
 library(ggthemes)   #extra plot customization
 library(scales)     #extra plot customization
 library(ggpubr)     #extra plot customization
-library(ggimage)      #add images to plot
+library(ggimage)    #add images to plot
 library(gtsummary)  #tables
 library(gt)         #tables
 options(scipen=999) #prevents scientific notation

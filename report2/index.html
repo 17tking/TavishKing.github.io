@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="ecommerce_proj_styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fac70d1134.js" crossorigin="anonymous"></script>
     <title>E-Commerce Analysis | Tavish King</title>
 <body>
 
 <nav class="navbar-container">
   <div class="nav-logo">
-    <a href="#overview"><img src="Images/profilefoto.jpg" alt="Logo" height="80"></a>
+    <a href="https://www.linkedin.com/in/tavish-king/" target="_blank"><img src="Images/profilefoto.jpg" alt="Logo" height="80"></a>
   </div>
 
     <ul class="nav-links">
@@ -29,11 +30,14 @@
     <h1>E-COMMERCE ANALYSIS</h1>
 </section>
 
+
+
+
 <!--E-Commerce Analysis Section-->
 <header class="ecommerce-section">
   <div class="text-content">
-<h2>Solving <strong>real problems</strong>.</h2> 
-<h2>Solving them with <strong>real data</strong>.</h2>
+<h2>Solving <strong>real problems.</strong></h2> 
+<h2>Solving <strong>real data.</strong></h2>
 
     <p>
       I aim to suggest improvements and optimization strategies for <strong>increasing sales</strong>, <strong>refining logistics</strong>, and <strong>developing customer retention</strong>. I hope to convey this info to you in a way that is both digestible and insightful.
@@ -47,6 +51,8 @@
     <img src="Images/ecommerce_cartoon.jpg" alt="E-Commerce Graphic" />
   </div>
 </header>
+
+
 
 
 <!--Overview Section-->
@@ -64,13 +70,12 @@
         </div>
 
         <div class="card">
-            <span><i class="ri-shopping-basket-2-line"></i></span>
+            <span><i class="ri-lightbulb-flash-line"></i></span>
             <h4>KPIs</h4>
             <p>I will drive action in this e-commerce business by answering stakeholder-like questions regarding...</p>
             <ul class="card-list">
                 <li>Product Affinity</li>
                 <li>Product Reviews</li>
-                <li>Customer Retention</li>
                 <li>Sales by Location</li>
                 <li>Logistics Analysis</li>
             </ul>
@@ -89,12 +94,13 @@
 
         </div>
         <div class="card">
-            <span><i class="ri-hashtag"></i></span>
+            <span><i class="fa-brands fa-r-project"></i></span>
             <h4>R </h4>
             <ul class="card-list">
                 <li>Ggplot2</li>
                 <li>Data Cleaning</li>
                 <li>Hypothesis Testing</li>
+                <li>Regression</li>
                 <li>Other statistics</li>
             </ul>
 
@@ -104,7 +110,8 @@
             <h4>Visualizations </h4>
             <ul class="card-list">
                 <li>Horizontal bar plots</li>
-                <li>Line graphs</li>
+                <li>Ladder Plots</li>
+                <li>Ridge Density Plots</li>
                 <li>Heat maps</li>
                 <li>More</li>
             </ul>
@@ -112,39 +119,79 @@
     </div>
 </section>
 
+
+
+
+
 <!--EDA Section-->
 <section class="container">
   <div class="eda-header">
     <h1 class="header">EXPLORATORY DATA ANALYSIS</h1>
   </div>
-
+    <!--product affinity slideshow-->
   <div class="eda-card">
-    <img id="edaPlot" src="R/plots/kpi1_10_highest.jpg" alt="EDA Plot" class="eda-plot">
+    <img id="edaPlot1" src="Images/PRODUCT AFFINITY.jpg" alt="EDA Plot" class="eda-plot">
   
     <div class="eda-controls">
-      <button id="prevBtn" onclick="changePlot(-1)" disabled>&#10094;</button>
-      <button id="nextBtn" onclick="changePlot(1)">&#10095;</button>
+      <button id="prevBtn1" onclick="changePlot(1, -1)" disabled>&#10094;</button>
+      <button id="nextBtn1" onclick="changePlot(1, 1)">&#10095;</button>
     </div>
   </div>
+
+  <!--product review slideshow-->
+  <div class="eda-card">
+    <img id="edaPlot2" src="Images/PRODUCT REVIEWS.jpg" alt="EDA Plot" class="eda-plot">
+  
+    <div class="eda-controls">
+      <button id="prevBtn2" onclick="changePlot(2, -1)" disabled>&#10094;</button>
+      <button id="nextBtn2" onclick="changePlot(2, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!--sales by location slideshow-->
+  <div class="eda-card">
+    <img id="edaPlot4" src="Images/SALES BY LOCATION.jpg" alt="EDA Plot" class="eda-plot">
+  
+    <div class="eda-controls">
+      <button id="prevBtn4" onclick="changePlot(4, -1)" disabled>&#10094;</button>
+      <button id="nextBtn4" onclick="changePlot(4, 1)">&#10095;</button>
+    </div>
+  </div>
+
+  <!--logistics analysis slideshow-->
+  <div class="eda-card">
+    <img id="edaPlot5" src="Images/LOGISTICS.jpg" alt="EDA Plot" class="eda-plot">
+  
+    <div class="eda-controls">
+      <button id="prevBtn5" onclick="changePlot(5, -1)" disabled>&#10094;</button>
+      <button id="nextBtn5" onclick="changePlot(5, 1)">&#10095;</button>
+    </div>
+  </div>
+
 </section>
+
+
+
 
 <!--Analysis Section-->
 <section class="container">
   <div class="analysis-container">
     <h1 class="header">MAIN ANALYSIS</h1>
-    <h2><i class="ri-shopping-basket-2-line"></i> Product Affinity</h2>
 
+
+    <!--Product Affinity-->
+    <h2><i style="color: #7078c5;" class="ri-shopping-basket-2-line"></i> Product Affinity</h2>
 
     <div class="analysis-section">
-      <h3>THE QUESTION</h3>
+      <h3>The STAKEHOLDER'S QUESTION</h3>
       <p>Are there any product combinations we should be promoting together because customers often buy them together?</p>
     </div>
     <div class="analysis-section">  
-      <h3>THE ANSWER</h3>
+      <h3>The ANSWER</h3>
       <p>Some home decor categories are selling together, but overall product affinity is weak. Most category pairings show low or negative Lift values. This means customers aren't naturally bundling items.</p>
     </div>
     <div class="analysis-section">
-      <h3>THE SOLUTION</h3>
+      <h3>The SOLUTION</h3>
       <div class="analysis-insights">
           <ul>
             <li>There is a need to add/improve our site's recommendation engine (e.g. "Customers who bought X, also buy Y") to guide smarter cross-category purchases.</li>
@@ -163,13 +210,97 @@
           </ul>
         </div>
       </div>
-
       <div class="section plot">
         <img src="R/plots/kpi1_heat_table_top_lift_pairs.png" alt="EDA Plot" />
       </div>
     </div>
+
+      <!--Product Reviews-->
+    <h2><i style="color: gold;" class="ri-star-fill"></i> Product Reviews</h2>
+
+
+    <div class="analysis-section">
+      <h3>The STAKEHOLDER'S QUESTION</h3>
+      <p>Which factors are most influencing customer satisfaction as reflected in product reviews?</p>
+    </div>
+    <div class="analysis-section">  
+      <h3>The ANSWER</h3>
+      <p>Larger order sizes and longer delivery times are the strongest drivers of lower review scores. Specifically, larger orders are 2.6× more likely to receive a 1-star rating, and extended delivery windows are linked to decreased satisfaction. In contrast, while total price and payment value are <em>statistically</em> significant, their practical impact on review outcomes is small.</p>
+    </div>
+    <div class="analysis-section">
+      <h3>The SOLUTION</h3>
+      <div class="analysis-insights">
+          <ul>
+            <li>Use review scores as an early warning system for logistics issues. Flag orders with long lead times or sourcing delays before shipment.</li>
+            <li>Prioritize faster fulfillment and shipping for larger orders, which are more likely to receive low ratings.</li>
+            <li>Set clearer delivery expectations on-site to reduce frustration from delays and protect satisfaction scores.</li>
+            <li>Introduce post-purchase check-ins or support for high-price orders, where expectations (and risk of disappointment) may be higher.</li>
+            <li>Focus improvement efforts on operational factors — not price.</li>
+          </ul>
+        </div>
+    </div>
+
+      <div class="analysis-section">
+        <h3>KEY INSIGHTS</h3>
+        <div class="analysis-insights">
+          <ul>
+            <li>Larger orders are <strong>2.6x more likely</strong> to receive a 1-star rating due to a possibility of <strong>fulfillment strain</strong> or <strong>complexity</strong>.</li>
+            <li>Delivery time is a huge driver for customer satisfaction; <strong>longer deliveries</strong> consistently lead to <strong>lower ratings</strong>.</li>
+            <li><strong>Higher prices</strong> are linked to a <strong>7% increase</strong> in 1-star ratings, suggesting elevated expectations may <strong>backfire</strong>.</li>
+            <li><strong>Final payment costs</strong> show a statistically significant effect, but with just a 2% shift in odds, it's <strong>not a major satisfaction factor</strong>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="eda-card">
+    <img id="edaPlot6" src="R/plots/kpi2_OR_ordersize.jpg" alt="EDA Plot" class="eda-plot">
+  
+    <div class="eda-controls">
+      <button id="prevBtn6" onclick="changePlot(6, -1)" disabled>&#10094;</button>
+      <button id="nextBtn6" onclick="changePlot(6, 1)">&#10095;</button>
+    </div>
+  </div>
+
+
+  <!--Sales by Location-->
+    <h2><i style="color: green;" class="ri-map-pin-fill"></i> Sales by Location</h2>
+
+    <div class="analysis-section">
+      <h3>The STAKEHOLDER'S QUESTION</h3>
+      <p>Which Brazilian states are generating the highest revenue through our online e-commerce store? Provide a breakdown of top performing regions along with any key sales insights that explain what's driving the differences.</p>
+    </div>
+    <div class="analysis-section">  
+      <h3>The ANSWER</h3>
+      <p></p>
+    </div>
+    <div class="analysis-section">
+      <h3>The SOLUTION</h3>
+      <div class="analysis-insights">
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+    </div>
+    <div class="grid">
+      <div class="analysis-section">
+        <h3>KEY INSIGHTS</h3>
+        <div class="analysis-insights">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="section plot">
+        <img src="#" alt="Analysis Plot" />
+      </div>
+    </div>
   </div>
 </section>
+
+
+
 
 <!--Conclusions Section-->
 <section class="container">

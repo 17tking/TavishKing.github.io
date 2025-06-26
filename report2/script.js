@@ -30,38 +30,76 @@ link4.addEventListener('click', () => {
 });
 
 
-// EDA slideshow
+// EDA slideshows
+const slideshows = {
+  1: {
+    images: [
+      "Images/PRODUCT AFFINITY.jpg",
+      "R/plots/kpi1_10_highest.jpg",
+      "R/plots/kpi1_10_lowest.jpg",
+      "R/plots/kpi1_multiple_category_plot.jpg",
+      "R/plots/kpi1_cat_popularity.jpg",
+      "R/plots/kpi1_top_category_pairs.jpg",
+      "R/plots/kpi1_heat_table_support_lift.png"
+    ],
+    index: 0
+  },
+  2: {
+    images: [
+      "iMAGES/PRODUCT REVIEWS.jpg",
+      "R/plots/kpi2_10_highest_reviewed.jpg",
+      "R/plots/kpi2_10_lowest_reviewed.jpg",
+      "R/plots/kpi2_review_dist.jpg",
+      "R/plots/kpi2_size_v_score.jpg",
+      "R/plots/kpi2_delivery_v_score.jpg",
+      "R/plots/kpi2_price_v_score.jpg",
+      "R/plots/kpi2_payment_v_score.jpg"
+    ],
+    index: 0
+  },
+  4: {
+    images: [
+      "iMAGES/SALES BY LOCATION.jpg"
+    ],
+    index: 0
+  },
+  5: {
+    images: [
+      "iMAGES/LOGISTICS.jpg"
+    ],
+    index: 0
+  },
+   6: {
+    images: [
+      "R/plots/kpi2_OR_ordersize.jpg",
+      "R/plots/kpi2_OR_deliverydays.jpg",
+      "R/plots/kpi2_OR_totprice.jpg",
+      "R/plots/kpi2_OR_paymentvalue.jpg"
+    ],
+    index: 0
+  }
+};
 
-const plotImages = [
-  "Images/PRODUCT AFFINITY.jpg",
-  "R/plots/kpi1_10_highest.jpg",
-  "R/plots/kpi1_10_lowest.jpg",
-  "R/plots/kpi1_multiple_category_plot.jpg",
-  "R/plots/kpi1_single_category_plot.jpg",
-  "R/plots/kpi1_top_category_pairs.jpg",
-  "R/plots/kpi1_heat_table_support_lift.png",
-  "R/plots/kpi1_cat_popularity.jpg",
-  "Images/PRODUCT REVIEWS.jpg"
-];
+function updatePlot(kpi) {
+  const slideshow = slideshows[kpi];
+  const img = document.getElementById(`edaPlot${kpi}`);
+  const prevBtn = document.getElementById(`prevBtn${kpi}`);
+  const nextBtn = document.getElementById(`nextBtn${kpi}`);
 
-let currentIndex = 0;
-
-function updatePlot() {
-  const img = document.getElementById("edaPlot");
-  const prevBtn = document.getElementById("prevBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  img.src = plotImages[currentIndex];
-
-  // Disable buttons when at start or end
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex === plotImages.length - 1;
+  img.src = slideshow.images[slideshow.index];
+  prevBtn.disabled = slideshow.index === 0;
+  nextBtn.disabled = slideshow.index === slideshow.images.length - 1;
 }
 
-function changePlot(direction) {
-  currentIndex += direction;
-  updatePlot();
+function changePlot(kpi, direction) {
+  slideshows[kpi].index += direction;
+  updatePlot(kpi);
 }
 
-// Initialize
-updatePlot();
+// Initialize all
+updatePlot(1);
+updatePlot(2);
+
+updatePlot(4);
+updatePlot(5);
+
