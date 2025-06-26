@@ -46,7 +46,7 @@ const slideshows = {
   },
   2: {
     images: [
-      "iMAGES/PRODUCT REVIEWS.jpg",
+      "Images/PRODUCT REVIEWS.jpg",
       "R/plots/kpi2_10_highest_reviewed.jpg",
       "R/plots/kpi2_10_lowest_reviewed.jpg",
       "R/plots/kpi2_review_dist.jpg",
@@ -59,13 +59,13 @@ const slideshows = {
   },
   4: {
     images: [
-      "iMAGES/SALES BY LOCATION.jpg"
+      "Images/SALES BY LOCATION.jpg"
     ],
     index: 0
   },
   5: {
     images: [
-      "iMAGES/LOGISTICS.jpg"
+      "Images/LOGISTICS.jpg"
     ],
     index: 0
   },
