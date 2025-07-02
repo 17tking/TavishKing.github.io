@@ -369,7 +369,6 @@ category_translation <- c(
 master_orders <- master_orders %>%
   mutate(product_category_english = category_translation[product_category_name])
 
-
 # filling missing geolocation latitude and longitude in master_orders 
 # with the median coordinates per customer_city.
 median_coords <- master_orders %>%

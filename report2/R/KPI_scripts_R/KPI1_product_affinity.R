@@ -42,12 +42,14 @@ kpi1_10_highest <- ggplot(top_highest_selling,
                      limits = c(0,12.5))+
   coord_flip()+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", size=14),
-        plot.subtitle = element_text(size=10, face="italic"),
-        axis.text = element_text(size = 10))+
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Top 10 Highest Selling Categories",
        subtitle = "*Canceled orders were not included",
        x = "",
@@ -75,12 +77,14 @@ kpi1_10_lowest <- ggplot(top_lowest_selling,
                      limits = c(0, 35))+
   coord_flip()+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", size=14),
-        plot.subtitle = element_text(size=10, face="italic"),
-        axis.text = element_text(size = 10))+
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Top 10 Lowest Selling Categories",
        subtitle = "*Canceled orders were not included",
        x = "",
@@ -120,11 +124,14 @@ kpi1_multiple_category_plot <- ggplot(pct_variety,
                                "red2"))+
   coord_flip()+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", size=14),
-        plot.subtitle = element_text(size=10, face="italic"))+
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Breakdown of Orders with Multiple Product Categories",
        x = "",
        y = "")
@@ -161,11 +168,14 @@ kpi1_single_category_plot <- ggplot(avg_10_products,
                      limits = c(0, 3))+
   coord_flip()+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", size=14),
-        plot.subtitle = element_text(size=10, face="italic"))+
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+
   labs(
     title = "Top 10 Categories with Highest Product Presence",
     subtitle = "Average amount of products from category found per order",
@@ -202,11 +212,14 @@ kpi1_top_category_pairs <- ggplot(paircounts_top10,
             color = "white")+
   coord_flip()+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", size=14),
-        plot.subtitle = element_text(size=10, face="italic"))+
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Top Product Category Pairings",
        subtitle = "The 10 most common combinations present in a customer's 'basket'",
        x = "",
@@ -313,13 +326,14 @@ kpi1_cat_popularity <- ggplot(topsupport_single_categories,
                      breaks = seq(0, 40, 5),
                      limits = c(0,40))+
   theme_bw()+
-  theme(panel.grid.major.y = element_blank(),
+  theme(legend.position = "none",
+        panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
-        legend.position = "none",
-        plot.title = element_text(face="bold", 
-                                  size=14),
-        plot.subtitle = element_text(size=10, 
-                                     face="italic"))+ 
+        plot.title = element_text(face="bold", size=16),
+        plot.subtitle = element_text(size=12, face="italic"),
+        plot.caption = element_text(size = 10),
+        axis.text = element_text(size = 11),
+        axis.title = element_text(size = 14, face = "bold"))+ 
   labs(title = "Top Individual Categories",
        subtitle = "The 10 most common categories present in a customer's 'basket'",
        x="",

@@ -57,12 +57,6 @@ const slideshows = {
     ],
     index: 0
   },
-  4: {
-    images: [
-      "Images/SALES BY LOCATION.jpg"
-    ],
-    index: 0
-  },
   5: {
     images: [
       "Images/LOGISTICS.jpg"
@@ -75,6 +69,15 @@ const slideshows = {
       "R/plots/kpi2_OR_deliverydays.jpg",
       "R/plots/kpi2_OR_totprice.jpg",
       "R/plots/kpi2_OR_paymentvalue.jpg"
+    ],
+    index: 0
+  },
+  7: {
+    images: [
+      "R/plots/kpi3_brazil_sales_map.jpg",
+      "R/plots/kpi3_brazil_orders_map.jpg",
+      "R/plots/kpi3_brazil_aov_map.jpg",
+      "R/plots/kpi3_brazil_delivery_map.jpg"
     ],
     index: 0
   }
