@@ -215,17 +215,17 @@ kpi3_brazil_aov_map <- ggplot(tot_state_sales)+
                size = 2.8,
                color = "black")+
   #gradient of colors
-  scale_fill_gradientn(colors = c("#f7a072", "#eddea4", "#f9f7f9", "#b5e2fa", "#0fa3b1"),
+  scale_fill_gradientn(colors = c("lightyellow2", "coral", "coral4"),
                        name = "",
                        label = label_number(prefix = "$"))+
   #insight annotation
   annotate("text", 
            x = -76, 
            y = -22, 
-           label = "Average order values \nin 'non-costal' states \nare on par with costal \nstates, but delivery times \nare slow (> 2 weeks).",
+           label = "Average order values \nin 'non-coastal' states \nare on par with coastal \nstates, but delivery times \nare slow (> 2 weeks).",
            hjust = 0, 
            size = 4, 
-           color = "skyblue4")+
+           color = "coral4")+
   #adjusting map location on plot
   coord_sf(xlim = c(-76, -34), ylim = c(-33, 4.5), expand = FALSE)+
   #plot theming
