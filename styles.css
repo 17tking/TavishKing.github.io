@@ -861,16 +861,40 @@ html {
   .intro-section h1 {
     font-size: 2rem;
     line-height: normal;
-    margin-left: 1rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+  /* Remove name typing effect on small screens */
+.hover-name {
+    color: white;
+    cursor: default;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+    transition: none;
+  }
+
+  .hover-name:hover {
+    font-size: inherit;
+  }
+
+  .cell-clicked {
+    background-color: transparent;
+    color: white;
+    font-family: inherit;
+    font-weight: inherit;
+    text-shadow: none;
+    box-shadow: none;
+    position: static;
+  }
+
+  .cell-clicked::after {
+    display: none;
   }
 
   .intro-section h3 {
     font-size: 1.5rem;
     margin-right: 0rem;
-    margin-top: -1rem;
-  }
-
-  .hover-name:hover {
-    font-size: 2.2rem;
+    margin-top: 0rem;
   }
 
