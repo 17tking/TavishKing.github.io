@@ -794,6 +794,7 @@ html {
   .logo-section h2, .logo-section i {
     font-size: 2rem;
     letter-spacing: 1rem;
+    margin-top: 2rem;
   }
 
   /* Project grid adjusts to one column */
