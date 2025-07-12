@@ -13,7 +13,6 @@ library(gtsummary)  #tables if needed
 library(gt)         #tables if needed
 library(geobr)      #spatial data set of Brazil
 library(sf)         #map graphing
-library(waterfalls) #waterfall plots for sales
 options(scipen=999) #prevents scientific notation
 
 
@@ -173,6 +172,14 @@ kpi3_brazil_delivery_map <- ggplot(tot_state_sales)+
   geom_sf_text(aes(label = abbrev_state),
                size = 2.8,
                color = "black")+
+  #insight annotation
+  annotate("text", 
+           x = -75, 
+           y = -22, 
+           label = "Northern Brazil is \ndominated by the Amazon \nrainforest, where dense \njungle terrain and limited \nroad infrastructure pose \nsignificant challenges to \ndelivery logistics and access \nto remote areas.",
+           hjust = 0, 
+           size = 3.2, 
+           color = "darkred")+
   #gradient of colors
   scale_fill_gradientn(colors = c("forestgreen", "palegreen2", "yellow3",
                                   "lightcoral", "darkred"),
@@ -222,7 +229,7 @@ kpi3_brazil_aov_map <- ggplot(tot_state_sales)+
   annotate("text", 
            x = -76, 
            y = -22, 
-           label = "Average order values \nin 'non-coastal' states \nare on par with coastal \nstates, but delivery times \nare slow (> 2 weeks).",
+           label = "Average order values \nin rural states \nare on par with urban \nstates, but delivery times \nare slow (> 2 weeks).",
            hjust = 0, 
            size = 4, 
            color = "coral4")+
@@ -254,12 +261,3 @@ ggsave(kpi3_brazil_aov_map,
 #####################################
 # SUMMARY: Time to upgrade logistics!
 #####################################
-
-
-# this table is available to explore for:
-#    - sales growth by month
-#    - customer growth by month
-#    - order volume growth by month
-#    - total sales by month
-
-yearmonth_sales <- read_csv("SQL/exports_to_R/KPI3_sales_by_location/kpi3_yearmonth_sales.csv") 

@@ -32,8 +32,7 @@ products = read_csv("Tables/raw/raw_products.csv")
 sellers = read_csv("Tables/raw/raw_sellers.csv")
 
 
-# creating object of all 9 raw tables
-# to inspect
+# creating object of all 9 raw tables to inspect
 dfs <- list(
   customers = customers,
   geolocation = geolocation,
@@ -86,7 +85,7 @@ for (name in names(dfs)) {
 geolocation <- geolocation[!duplicated(geolocation), ]
 sum(duplicated(geolocation)) #zero! nice.
     #why remove those duplicates?
-      #they were repeated identical entries. Provide no additional info.
+    #they were repeated identical entries. Provide no additional info.
 
 
 #########################
@@ -160,7 +159,7 @@ payments_filtered <- order_payments %>%
 payments_filtered
 
 
-#  replace missing order_approved_at timestamps with the 
+# replace missing order_approved_at timestamps with the 
 # corresponding order_purchase_timestamp for orders that 
 # have a status of "delivered."
 orders <- orders %>%

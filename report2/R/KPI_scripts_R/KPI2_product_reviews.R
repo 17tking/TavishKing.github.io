@@ -34,15 +34,16 @@ top_10_highest_reviewed <- read_csv("SQL/exports_to_R/KPI2_product_reviews/kpi2_
 kpi2_10_highest_reviewed <- ggplot(top_10_highest_reviewed,
        aes(x = reorder(product_category_english, avg_review_score),
            y = avg_review_score))+
-  geom_col(fill = "purple4")+
+  geom_col(fill = "seagreen4")+
   geom_text(aes(label = label_number(suffix = " \u2605")(avg_review_score)),
             hjust = 1.2,
-            size = 4.3,
-            color = "gold")+
+            size = 4,
+            color = "white",
+            fontface = "bold")+
   scale_y_continuous(breaks = seq(0, 5, 1),
                      limits = c(0,5))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -51,10 +52,11 @@ kpi2_10_highest_reviewed <- ggplot(top_10_highest_reviewed,
         plot.caption = element_text(size = 10),
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
-  labs(title = "Top 10 Highest Reviewed Product Categories",
-       subtitle = "These categories earned the highest praise from our customers",
+  labs(title = "Top 10 Highest Reviewed Categories",
+       subtitle = "These categories are earning an average rating above 4 stars",
        x = "",
-       y = "Category Rating")
+       y = "Rating",
+       caption = "Note: only products with > 50 reviews were used")
 
 #saving plot
 ggsave(kpi2_10_highest_reviewed,
@@ -71,15 +73,16 @@ top_10_lowest_reviewed <- read_csv("SQL/exports_to_R/KPI2_product_reviews/kpi2_1
 kpi2_10_lowest_reviewed <- ggplot(top_10_lowest_reviewed,
        aes(x = reorder(product_category_english, 10:1),
            y = avg_review_score))+
-  geom_col(fill = "plum3")+
+  geom_col(fill = "indianred4")+
   geom_text(aes(label = label_number(suffix = " \u2605")(avg_review_score)),
             hjust = 1.2,
-            size = 4.3,
-            color = "black")+
+            size = 4,
+            color = "white",
+            fontface = "bold")+
   scale_y_continuous(breaks = seq(0, 5, 1),
                      limits = c(0,5))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -88,10 +91,11 @@ kpi2_10_lowest_reviewed <- ggplot(top_10_lowest_reviewed,
         plot.caption = element_text(size = 10),
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
-  labs(title = "Top 10 Lowest Reviewed Product Categories",
-       subtitle = "These categories earned the lowest praise from our customers",
+  labs(title = "Top 10 Lowest Reviewed Categories",
+       subtitle = "Not low, but close to being problematic",
        x = "",
-       y = "Category Rating")
+       y = "Category Rating",
+       caption = "Note: only products with > 50 reviews were used")
 
 #saving plot
 ggsave(kpi2_10_lowest_reviewed,
@@ -113,8 +117,9 @@ kpi2_review_dist <- ggplot(review_dist,
   geom_col()+
   geom_text(aes(label = label_number(suffix = "%")(review_score_prop)),
                 vjust = -0.5,
-                size = 4.3,
-                color = "black")+
+                size = 4,
+                color = "black",
+            fontface = "bold")+
   scale_fill_manual(values = c("darkorange3",
                                "goldenrod",
                                "palegoldenrod",
@@ -123,10 +128,10 @@ kpi2_review_dist <- ggplot(review_dist,
   scale_y_continuous(breaks = seq(0, 100, 20),
                      label = label_number(suffix = "%"),
                      limits = c(0,100))+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
-        panel.grid.major.y = element_blank(),
-        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
         plot.title = element_text(face="bold", size=16),
         plot.subtitle = element_text(size=12, face="italic"),
         plot.caption = element_text(size = 10),
@@ -194,8 +199,8 @@ kpi2_price_v_score <- ggplot(review_model_analysis,
                                "palegreen4",
                                "darkgreen",
                                "gray"))+
-  coord_cartesian(xlim = c(0, 2))+
-  theme_bw()+
+  coord_cartesian(xlim = c(0, 1.5))+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -208,7 +213,7 @@ kpi2_price_v_score <- ggplot(review_model_analysis,
        subtitle = "Customers rate similarly regardless of what they paid",
        y = "Rating",
        x = "Total Order Price (R$)",
-       caption = "NOTE: 157 orders cost more than 2K")
+       caption = "NOTE: 157 orders cost more than 1.5K")
 
 #saving plot
 ggsave(kpi2_price_v_score,
@@ -249,7 +254,7 @@ kpi2_delivery_v_score <- ggplot(review_model_analysis,
                                 "darkblue",
                                 "gray"))+
   coord_cartesian(xlim = c(0, 100))+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -305,7 +310,7 @@ kpi2_size_v_score <- ggplot(review_model_analysis,
                                 "steelblue4",
                                 "gray"))+
   coord_cartesian(xlim = c(1, 7))+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -347,20 +352,20 @@ kpi2_payment_v_score <- ggplot(review_model_analysis,
   scale_x_continuous(label = label_number(suffix = "K"),
                      breaks = seq(0, 2, 0.5),
                      limits = c(0, 2))+
-  scale_fill_manual(values = c("goldenrod4",
-                               "goldenrod2",
-                               "wheat2",
-                               "orchid2",
-                               "purple3",
+  scale_fill_manual(values = c("darkorange3",
+                               "goldenrod",
+                               "palegoldenrod",
+                               "skyblue",
+                               "skyblue4",
                                "gray"))+
-  scale_color_manual(values = c("orange4",
-                                "gold4",
-                                "wheat4",
-                                "orchid4",
-                                "purple4",
+  scale_color_manual(values = c("darkorange4",
+                                "goldenrod4",
+                                "goldenrod",
+                                "skyblue3",
+                                "steelblue4",
                                 "gray"))+
-  coord_cartesian(xlim = c(0, 2))+
-  theme_bw()+
+  coord_cartesian(xlim = c(0, 1.5))+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -373,7 +378,7 @@ kpi2_payment_v_score <- ggplot(review_model_analysis,
        subtitle = "Customers rate similarly regardless of final payment costs",
        y = "Rating",
        x = "Final Price (R$)",
-       caption = "NOTE: 211 orders had a final \n payment cost more than R$2K")
+       caption = "NOTE: 211 orders had a final \n payment cost more than R$1.5K")
 
 #saving plot
 ggsave(kpi2_payment_v_score,
@@ -509,10 +514,10 @@ kpi2_OR_ordersize <- ggplot(ordersize_df,
                           aes(x = OR,
                               y = reorder(variable, 4:1),
                               text=paste0("p=" ,p_value)))+
-    geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed")+
+    geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed", color = "gray50")+
     geom_errorbarh(aes(xmax = UCL_95, xmin = LCL_95), size = 0.6, 
                  height = .25, color = "black")+
-    geom_point(shape = 22, color="black", fill = "aquamarine3", size = 6)+
+    geom_point(shape = 20, color="black", fill = "gray10", size = 6)+
     geom_text(aes(label = paste0(round(OR, 1), "x")), 
               hjust = 0.5,
               vjust = 2.5,
@@ -542,7 +547,7 @@ kpi2_OR_ordersize <- ggplot(ordersize_df,
                  arrow = arrow(length=unit(.5, 'cm')),
                  lwd = 1,
                  color = "green4")+
-    theme_bw()+
+    theme_classic()+
     theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -584,10 +589,10 @@ kpi2_OR_deliverydays <- ggplot(deliverydays_df,
                             aes(x = OR,
                                 y = reorder(variable, 4:1),
                                 text=paste0("p=" ,p_value)))+
-  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed")+
+  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed", color = "gray50")+
   geom_errorbarh(aes(xmax = UCL_95, xmin = LCL_95), size = 0.6, 
                  height = .25, color = "black")+
-  geom_point(shape = 22, color="black", fill = "lightcoral", size = 6)+
+  geom_point(shape = 20, color="black", fill = "gray10", size = 6)+
   geom_text(aes(label = paste0(round(OR, 1), "x")), 
             hjust = 0.5,
             vjust = 2.5,
@@ -617,7 +622,7 @@ kpi2_OR_deliverydays <- ggplot(deliverydays_df,
                arrow = arrow(length=unit(.5, 'cm')),
                lwd = 1,
                color = "green4")+
-  theme_bw()+
+  theme_classic()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -661,10 +666,10 @@ kpi2_OR_totprice <- ggplot(totprice_df,
                                aes(x = OR,
                                    y = reorder(variable, 4:1),
                                    text=paste0("p=" ,p_value)))+
-  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed")+
+  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed", color = "gray50")+
   geom_errorbarh(aes(xmax = UCL_95, xmin = LCL_95), size = 0.6, 
                  height = .25, color = "black")+
-  geom_point(shape = 22, color="black", fill = "slateblue3", size = 6)+
+  geom_point(shape = 20, color="black", fill = "gray10", size = 6)+
   geom_text(aes(label = paste0(round(OR, 2), "x")), 
             hjust = -0.3,
             vjust = 2,
@@ -694,7 +699,7 @@ kpi2_OR_totprice <- ggplot(totprice_df,
                arrow = arrow(length=unit(.5, 'cm')),
                lwd = 1,
                color = "green4")+
-  theme_bw()+
+  theme_classic()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -730,10 +735,10 @@ kpi2_OR_paymentvalue <- ggplot(paymentvalue_df,
                            aes(x = OR,
                                y = variable,
                                text=paste0("p=" ,p_value)))+
-  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed")+
+  geom_vline(aes(xintercept = 1), size = .7, linetype = "dashed", color = "gray50")+
   geom_errorbarh(aes(xmax = UCL_95, xmin = LCL_95), size = 0.6, 
                  height = .25, color = "black")+
-  geom_point(shape = 22, color="black", fill = "goldenrod3", size = 8)+
+  geom_point(shape = 20, color="black", fill = "gray10", size = 8)+
   geom_text(aes(label = paste0(round(OR, 2), "x")), 
             hjust = 1.3,
             vjust = 2.4,
@@ -763,7 +768,7 @@ kpi2_OR_paymentvalue <- ggplot(paymentvalue_df,
                arrow = arrow(length=unit(.5, 'cm')),
                lwd = 1,
                color = "green4")+
-  theme_bw()+
+  theme_classic()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),

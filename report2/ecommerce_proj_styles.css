@@ -317,6 +317,38 @@ h1 {
 }
 
 
+/* Conclusions */
+.conclusion h2 {
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #ccc;
+  text-decoration-thickness: 2px;
+}
+
+.conclusion h2 strong {
+  color: #d02424;
+}
+
+.conclusion li {
+  margin-block: 1.5rem;
+  max-width: 600px;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+}
+
+.conclusion li:hover {
+  color: #d02424;
+}
+
+.conclusion a {
+  color: #1f85c9;
+  text-decoration: underline;
+}
+
+/* Footer */
+
+
+
 /* Media Queries  */
 @media (max-width: 768px) {
   .ecommerce-section {

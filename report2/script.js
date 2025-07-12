@@ -34,19 +34,17 @@ link4.addEventListener('click', () => {
 const slideshows = {
   1: {
     images: [
-      "Images/PRODUCT AFFINITY.jpg",
       "R/plots/kpi1_10_highest.jpg",
       "R/plots/kpi1_10_lowest.jpg",
       "R/plots/kpi1_multiple_category_plot.jpg",
       "R/plots/kpi1_cat_popularity.jpg",
       "R/plots/kpi1_top_category_pairs.jpg",
-      "R/plots/kpi1_heat_table_support_lift.png"
+      "R/plots/kpi1_heat_table_support_lift.jpeg"
     ],
     index: 0
   },
   2: {
     images: [
-      "Images/PRODUCT REVIEWS.jpg",
       "R/plots/kpi2_10_highest_reviewed.jpg",
       "R/plots/kpi2_10_lowest_reviewed.jpg",
       "R/plots/kpi2_review_dist.jpg",

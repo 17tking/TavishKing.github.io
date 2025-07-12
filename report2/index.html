@@ -40,7 +40,7 @@
 <h2>Solving <strong>real data.</strong></h2>
 
     <p>
-      I aim to suggest improvements and optimization strategies for <strong>increasing sales</strong>, <strong>refining logistics</strong>, and <strong>developing customer retention</strong>. I hope to convey this info to you in a way that is both digestible and insightful.
+      I aim to suggest improvements and opportunities for <strong>increasing sales</strong>, <strong>refining logistics</strong>, and <strong>developing customer retention</strong>. I hope to convey this info to you in a way that is both digestible and insightful.
     </p>
     <p>
       This analysis was built with YOU in mind. Enjoy exploring!
@@ -72,12 +72,11 @@
         <div class="card">
             <span><i class="ri-lightbulb-flash-line"></i></span>
             <h4>KPIs</h4>
-            <p>I will drive action in this e-commerce business by answering stakeholder-like questions regarding...</p>
+            <p>I will drive action in this e-commerce business by answering a few stakeholder-like questions regarding...</p>
             <ul class="card-list">
                 <li>Product Affinity</li>
                 <li>Product Reviews</li>
                 <li>Brazil Sales Behavior</li>
-                <li>Logistics Analysis</li>
             </ul>
 
         </div>
@@ -148,16 +147,6 @@
     </div>
   </div>
 
-  <!--logistics analysis slideshow-->
-  <div class="eda-card">
-    <img id="edaPlot5" src="Images/LOGISTICS.jpg" alt="EDA Plot" class="eda-plot">
-  
-    <div class="eda-controls">
-      <button id="prevBtn5" onclick="changePlot(5, -1)" disabled>&#10094;</button>
-      <button id="nextBtn5" onclick="changePlot(5, 1)">&#10095;</button>
-    </div>
-  </div>
-
 </section>
 
 
@@ -200,7 +189,7 @@
         </div>
       </div>
       <div class="section plot">
-        <img src="R/plots/kpi1_heat_table_top_lift_pairs.png" alt="EDA Plot" />
+        <img src="R/plots/kpi1_heat_table_top_lift_pairs.jpeg" alt="EDA Plot" />
       </div>
     </div>
 
@@ -255,16 +244,16 @@
 
     <div class="analysis-section">
       <h3>The STAKEHOLDER'S QUESTION</h3>
-      <p>Which Brazilian states are generating the highest revenue through our online e-commerce store? Provide a breakdown of top performing regions along with any key sales insights that explain what's driving the differences.</p>
+      <p>Which Brazilian states are generating the highest revenue through our online e-commerce store? Are there any logistics issues?</p>
     </div>
     <div class="analysis-section">  
       <h3>The ANSWER</h3>
-      <p>São Paulo and other coastal states lead the way in sales revenue. I'm seeing a handful of reasons for this:
+      <p>São Paulo and other urban states lead the way in sales revenue. I'm seeing a handful of reasons for this:
         <li>sellers are mostly located in SP</li>
         <li>population density</li>
         <li>access to fast/reliable shipping</li>
         <br>
-        Nonetheless, I also see BIG opportunities for marketing and logistics to upgrade their strategies to CREATE revenue in these northern states. 
+        Nonetheless, I also see BIG opportunities for marketing and logistics to upgrade their strategies to CREATE revenue in these more rural states. 
       </p>
     </div>
     <div class="analysis-section">
@@ -274,7 +263,7 @@
             <li>Target major cities in low-revenue states (e.g. Manaus, São Luis)</li>
             <li>Find local sellers in undeserved regions to reduce shipping time</li>
             <li>Run ads in high-aov, low-order states where shoppers already spend more</li>
-            <li>Offer free shipping to eliminate the negative consequences of long delivery times</li>
+            <li>Offer free shipping for orders above a certain price to eliminate the negative consequences of long delivery times and promote more spending</li>
             <li>Launch micro-fulfillment pilots in North and Center-West regions to speed up order processing</li>
           </ul>
         </div>
@@ -286,7 +275,7 @@
           <ul>
             <li>The <strong>top 5</strong> revenue generating states accrued <strong>10.4M in sales</strong> from 1/2017 to 9/2018</li>
             <li><strong>91% of sellers</strong> reside in SP, PR, MG, SC, and RJ</li>
-            <li>Customers in <strong>northern states</strong> were waiting up to <strong>1 month</strong> for their order to be <strong>delivered</strong></li>
+            <li>Customers in <strong>more rural states</strong> were waiting up to <strong>1 month</strong> for their order to be <strong>delivered</strong></li>
           </ul>
         </div>
       </div>
@@ -298,52 +287,41 @@
       <button id="nextBtn7" onclick="changePlot(7, 1)">&#10095;</button>
     </div>
   </div>
-
-     <!--Logistics-->
-    <h2><i style="color: coral;" class="ri-truck-line"></i> Logistics</h2>
-
-    <div class="analysis-section">
-      <h3>The STAKEHOLDER'S QUESTION</h3>
-      <p></p>
-    </div>
-    <div class="analysis-section">  
-      <h3>The ANSWER</h3>
-      <p></p>
-    </div>
-    <div class="analysis-section">
-      <h3>The SOLUTION</h3>
-      <div class="analysis-insights">
-          <ul>
-            <li></li>
-          </ul>
-        </div>
-    </div>
-    <div class="grid">
-      <div class="analysis-section">
-        <h3>KEY INSIGHTS</h3>
-        <div class="analysis-insights">
-          <ul>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </div>
-      <div class="section plot">
-        <img src="#" alt="EDA Plot" />
-      </div>
-    </div>
   </div>
 </section>
 
 
-
-
 <!--Conclusions Section-->
 <section class="container">
-    <h1 class="header">CONCLUSIONS</h1>
-    <div class="conclusion">
-    </div>
+  <h1 class="header">CONCLUSIONS</h1>
+  <div class="conclusion">
+    <p>
+      From this large dataset, I uncovered several key focus areas for Olist's e-commerce business. The following insights highlight opportunities for improvement:
+    </p><br>
+    <ul>
+      <li>Website engagement appears low. Customers may not be diversifying their baskets because the platform primarily directs them to checkout rather than offering a personalized shopping experience.</li>
+      <li>Delivery speed significantly impacts customer satisfaction and likely influences repeat purchases. If shopping in-store is easier than waiting for delivery, Olist’s logistics could be the barrier.</li>
+      <li>Supply chain inefficiencies emerge when customers purchase multiple products. Lead times, vendor coordination, and inventory management require closer monitoring. Removing low-demand products may reduce strain on warehouse operations.</li>
+      <li>Urban hubs like São Paulo drive the most sales, but rural states show strong potential through their high average order values. A portion of revenue should be invested in marketing and logistics campaigns to expand access and engagement in underserved regions.</li>
+    </ul><br>
+
+    <h2>What I Learned: <strong>SQL</strong></h2>
+    <p>Using CTEs boosted my SQL confidence immensely. Visualizing the desired output before writing queries helped me create efficient "micro-tables" that could be directly loaded into R for targeted visualizations.</p><br>
+    <p>Window functions made delivery time calculations far more efficient. They opened a new world for date-based analysis and data comparison.</p><br>
+
+    <h2>What I Learned: <strong>R</strong></h2>
+    <p>R is my go-to tool for data cleaning and automation. Having a clean, repeatable script ensures that changes are easy to implement. If you're not already using R or Python for wrangling data, I strongly recommend starting!</p><br>
+    <p>While R is known for visualization, its customization options continue to impress me. This project marked my first time creating choropleth maps, and resources like the <a href="https://r-graph-gallery.com/" target="_blank">R Graph Gallery</a> were incredibly helpful.</p><br>
+
+    <h2>What I Learned: <strong>Business Analysis</strong></h2>
+    <p>This project opened up countless paths for exploration. My goal was to reflect both in-depth analysis and quick-turnaround insights — the kind stakeholders often rely on from data analysts.</p><br>
+    <p>I hope this inspires other analysts to think beyond the code and build business strategies from the data they work with. There’s always more to uncover within the data you're responsible for.</p><br>
+  </div>
 </section>
+
+<footer class="footer" style="font-size: 0.9rem; margin: 2rem; margin-top: 3rem; margin-bottom: 3rem; padding-top: 1rem; border-top: 1px solid #ccc; color: #999;">
+  <p><strong>Disclaimer:</strong> This project includes elements of HTML/CSS design guidance inspired by <a href="https://www.youtube.com/@ASMRProg" target="_blank">ASMRProg</a> tutorials. Some content ideas and phrasing have also been enhanced with the assistance of AI (ChatGPT by OpenAI) to improve clarity, structure, and insight delivery. All final analyses, data interpretations, and design choices were independently made by the project author (Me).</p>
+</footer>
 
     <script src="script.js"></script>
 

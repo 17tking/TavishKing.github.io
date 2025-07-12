@@ -25,23 +25,26 @@ options(scipen=999) #prevents scientific notation
 # - 785 orders with multiple different product categories
 
 ### top 10 highest selling categories
+
 #loading data frame
 top_highest_selling <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_10_highest_selling.csv") %>% 
   mutate(salecount = round(salecount/1000, 2))
 
+# Top 10 Highest Selling Categories
 kpi1_10_highest <- ggplot(top_highest_selling,
        aes(x = reorder(product_category_english, salecount),
            y = salecount))+
   geom_col(fill = "dodgerblue3")+
   geom_text(aes(label = label_number(suffix = "K")(salecount)), 
             hjust = 1.5, 
-            size = 3.3,
-            color = "white")+
+            size = 3.7,
+            color = "white",
+            fontface = "bold")+
   scale_y_continuous(labels = label_number(suffix = "K"),
                      breaks = seq(0, 12.5, 2.5),
                      limits = c(0,12.5))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -51,9 +54,9 @@ kpi1_10_highest <- ggplot(top_highest_selling,
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Top 10 Highest Selling Categories",
-       subtitle = "*Canceled orders were not included",
+       subtitle = "Categories related to home and self-care drive the majority of unit sales",
        x = "",
-       y = "")
+       y = "Units Sold")
 
 #saving plot
 ggsave(kpi1_10_highest, 
@@ -68,15 +71,16 @@ top_lowest_selling <- read_csv("SQL/exports_to_R/KPI1_product_affinity/kpi1_10_l
 kpi1_10_lowest <- ggplot(top_lowest_selling,
        aes(x = reorder(product_category_english, 10:1),
            y = salecount))+
-  geom_col(fill = "darkgoldenrod1")+
+  geom_col(fill = "steelblue2")+
   geom_text(aes(label = salecount), 
             hjust = 1.5, 
-            size = 3.3,
-            color = "black")+
+            size = 3.7,
+            color = "white",
+            fontface = "bold")+
   scale_y_continuous(breaks = seq(0, 35, 5),
                      limits = c(0, 35))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -86,9 +90,9 @@ kpi1_10_lowest <- ggplot(top_lowest_selling,
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
   labs(title = "Top 10 Lowest Selling Categories",
-       subtitle = "*Canceled orders were not included",
+       subtitle = "These items may be in low demand or quality is poor",
        x = "",
-       y = "")
+       y = "Units Sold")
 
 #saving plot
 ggsave(kpi1_10_lowest,
@@ -114,16 +118,18 @@ kpi1_multiple_category_plot <- ggplot(pct_variety,
                                           fill=productcatcount))+
   geom_bar(stat="identity",
            width = 0.6)+
-  geom_text(label = "Only 2.3% of orders contain 3 \n different product categories",
-            hjust = -0.19,
-            size = 5)+
+  geom_text(aes(label = label_number(suffix = "%")(round(percentage, 2))),
+            hjust = -0.2,
+            size = 4.5,
+            fontface = "bold")+
   scale_y_continuous(labels = label_number(suffix = "%"),
                      breaks = seq(0, 100, 25),
-                     limits = c(0, 100))+
-  scale_fill_manual(values = c("gray60", 
+                     limits = c(0, 106))+
+  scale_fill_manual(values = c("gray60",
+                               "orange",
                                "red2"))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -132,9 +138,10 @@ kpi1_multiple_category_plot <- ggplot(pct_variety,
         plot.caption = element_text(size = 10),
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
-  labs(title = "Breakdown of Orders with Multiple Product Categories",
+  labs(title = "Orders with Multiple Categories",
+       subtitle = "N = 98,203 orders; No order purchased more than 3 different categories",
        x = "",
-       y = "")
+       y = "Percentage of Orders")
 
 # saving plot
 ggsave(plot = kpi1_multiple_category_plot,
@@ -159,15 +166,16 @@ kpi1_single_category_plot <- ggplot(avg_10_products,
                                     aes(x=reorder(product_category_english, mean_products), 
                                         y=mean_products))+
   geom_bar(stat = "identity",
-           fill = "darkslategray4")+
+           fill = "skyblue4")+
   geom_text(aes(label = round(mean_products, 2)), 
             hjust = 1.5, 
-            size = 3.3,
-            color = "white")+
+            size = 3.7,
+            color = "white",
+            fontface = "bold")+
   scale_y_continuous(breaks = seq(0, 3, 0.5),
                      limits = c(0, 3))+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -177,10 +185,10 @@ kpi1_single_category_plot <- ggplot(avg_10_products,
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
   labs(
-    title = "Top 10 Categories with Highest Product Presence",
-    subtitle = "Average amount of products from category found per order",
+    title = "Top 10 Categories with High Product Diversity",
+    subtitle = "Shoppers typically buy a wide variety of products in these categories",
     x = "",
-    y = "Avg. Unique Products per Order")
+    y = "Average Product Variety per Order")
 
 # saving plot
 ggsave(plot = kpi1_single_category_plot, 
@@ -205,13 +213,14 @@ kpi1_top_category_pairs <- ggplot(paircounts_top10,
                                   aes(x=reorder(pairlabel, paircount), 
                                       y=paircount))+
   geom_bar(stat="identity",
-           fill = "palegreen4")+
+           fill = "royalblue4")+
   geom_text(aes(label = paircount),
             hjust = 1.5,
             size = 3.5,
-            color = "white")+
+            color = "white",
+            fontface = "bold")+
   coord_flip()+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -220,10 +229,10 @@ kpi1_top_category_pairs <- ggplot(paircounts_top10,
         plot.caption = element_text(size = 10),
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+
-  labs(title = "Top Product Category Pairings",
-       subtitle = "The 10 most common combinations present in a customer's 'basket'",
+  labs(title = "Top 10 Product Category Pairings",
+       subtitle = "Home products show potential to promote bundles",
        x = "",
-       y = "Number of Orders")
+       y = "Orders")
 
 # saving plot
 ggsave(plot = kpi1_top_category_pairs,
@@ -247,13 +256,13 @@ gt_supportpair_table <- top_10_supportpair_table %>%
   gt() %>% 
   data_color(
     columns = c(Lift),
-    colors = scales::col_numeric(palette = c("seashell1", 
-                                             "darkgreen"),
+    colors = scales::col_numeric(palette = c("white", 
+                                             "royalblue4"),
                                  domain = range(top_10_supportpair_table$Lift))) %>% 
   data_color(
     columns = c(Support),
-    colors = scales::col_numeric(palette = c("seashell1", 
-                                             "darkgreen"),
+    colors = scales::col_numeric(palette = c("white", 
+                                             "royalblue4"),
                                  domain = range(top_10_supportpair_table$Support))) %>% 
   tab_header(
     title = md("**Home Decor dominates paired transactions**"),
@@ -263,7 +272,7 @@ Lift = pairing strength")) %>%
     style = cell_text(weight = "bold"),
     locations = cells_column_labels(everything()))
 
-#manually saved table for easier formatting...(used screenshot)
+#saved as JPEG, 600x550, "kpi1_heat_table_support_lift"
 gt_supportpair_table
 
 
@@ -301,7 +310,7 @@ topsupport_single_categories <- bind_rows(top_cats, other_cats) %>%
                          "top"))
 
 
-# Figure 1-horizontal bar chart
+#horizontal bar chart
 kpi1_cat_popularity <- ggplot(topsupport_single_categories, 
                               aes(x=reorder(product_category, 11:1), 
                                   y=support_pct,
@@ -309,8 +318,9 @@ kpi1_cat_popularity <- ggplot(topsupport_single_categories,
   geom_col()+
   geom_text(aes(label = support_pct),
             hjust = 1.5,
-            size = 3.5,
-            color = "white")+
+            size = 3.7,
+            color = "white",
+            fontface = "bold")+
   geom_bracket(xmin = "bed_bath_table",
                xmax = "toys",
                y.position = 12,
@@ -320,12 +330,12 @@ kpi1_cat_popularity <- ggplot(topsupport_single_categories,
                vjust = 4.5,
                hjust = -0.27)+
   coord_flip()+
-  scale_fill_manual(values = c("top"="goldenrod3", 
+  scale_fill_manual(values = c("top"="steelblue", 
                                "others"="gray50"))+
   scale_y_continuous(labels = label_number(suffix = "%"),
                      breaks = seq(0, 40, 5),
                      limits = c(0,40))+
-  theme_bw()+
+  theme_minimal()+
   theme(legend.position = "none",
         panel.grid.major.y = element_blank(),
         panel.grid.minor.y = element_blank(),
@@ -334,11 +344,11 @@ kpi1_cat_popularity <- ggplot(topsupport_single_categories,
         plot.caption = element_text(size = 10),
         axis.text = element_text(size = 11),
         axis.title = element_text(size = 14, face = "bold"))+ 
-  labs(title = "Top Individual Categories",
-       subtitle = "The 10 most common categories present in a customer's 'basket'",
+  labs(title = "Top 10 Most Common Categories",
+       subtitle = "Home, Self-care, and accessories are the most popular",
        x="",
        y="Support",
-       caption = "Note: Support is a measure of how frequently \n an item or itemset appears in transactions")
+       caption = "Note: Support = % of transactions")
 
 #saving plot
 ggsave(kpi1_cat_popularity,
@@ -369,7 +379,7 @@ gt_liftpairs_table <- top10_liftpairs_table %>%
   data_color(
     columns = c(Lift),
     colors = scales::col_numeric(palette = c("white", 
-                                             "dodgerblue4"),
+                                             "steelblue4"),
                                  domain = range(top10_liftpairs_table$Lift))) %>%
   data_color(
     columns = c(Frequency),
@@ -377,7 +387,7 @@ gt_liftpairs_table <- top10_liftpairs_table %>%
                                              "darkgoldenrod2"),
                                  domain = range(top10_liftpairs_table$Frequency))) %>%
   tab_header(
-    title = md("**Lift is high, but frequency is low**"),
+    title = md("**Low Evidence for Strong Product Pairs**"),
     subtitle = md("Support = % of transactions \n 
 Lift = pairing strength")) %>% 
   tab_style(
@@ -386,6 +396,6 @@ Lift = pairing strength")) %>%
   tab_footnote("Note: Only pairings with greater than 10 purchases were included 
                for statistical relevance.")
 
-# saving table manually
+# saved as JPEG, 700x575, "kpi1_heat_table_top_lift_pairs"
 gt_liftpairs_table
 
