@@ -265,11 +265,11 @@ h1, h2, h3, h4, h5, h6 {
 .cell-clicked::after {
   content: "";
   position: absolute;
-  right: 1rem;
+  right: 0.4rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 2px;
-  height: 1.5rem;
+  width: 2.5px;
+  height: 4rem;
   background-color: #000;
   animation: blink 1s steps(1) infinite;
 }
@@ -896,8 +896,9 @@ footer {
 /* Mobile Phones */
 @media (max-width: 480px) {
   .container {
-    padding: 0.5rem;
+    padding: 15px;
     gap: 1rem;
+    width: 100%;
   }
 
   .navbar img {
@@ -916,7 +917,7 @@ footer {
   }
 
   .btn {
-    padding: 0.35rem 0.7rem;
+    padding: 0.5rem 0.7rem;
   }
 
   .intro-section {
