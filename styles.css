@@ -117,13 +117,22 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
+.dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0.75rem;
+}
+
 .dropdown-menu {
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 100%;
   left: 0;
-  margin-top: 0.75rem;
+  margin-top: 0;
   background: #fff;
   padding: 1rem;
   gap: 0.5rem;
@@ -132,8 +141,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border: 1px solid #e0e0e0;
   opacity: 0;
-  transform: translateY(-10px);
-  pointer-events: auto;
+  pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 100;
 }
@@ -145,7 +153,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dropdown:hover .dropdown-menu {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(10px);
   pointer-events: auto;
 }
 
@@ -226,9 +234,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .intro-section h1 {
   font-size: 4rem;
-  font-weight: 500;
+  font-weight: 300;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 2px;
 }
 
@@ -282,50 +290,81 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================= */
 /* ABOUT SECTION */
 /* ============================= */
+
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+  gap: 4rem;
   max-width: 1200px;
   margin: 4rem auto;
   padding: 2rem;
 }
 
+.about-section .image-content {
+  display: flex;
+  justify-content: center;
+}
+
 .about-section .image-content img {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 50%;
   display: block;
-  margin: 0 auto;
+  width: min(100%, 500px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-section .text-content {
+  max-width: 550px;
 }
 
 .about-section .text-content h2 {
+  margin: 0 0 1.5rem;
   font-size: 2rem;
-  line-height: 1.4;
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  line-height: 1.2;
+  font-weight: 400;
 }
 
 .about-section .text-content p {
-  margin-bottom: 1.5rem;
+  margin: 0 0 1.5rem;
   line-height: 1.8;
 }
 
-.about-section .text-content p strong {
-  color: #E9A13C;
+.about-section .text-content strong {
+  color: #e9a13c;
   font-weight: 600;
 }
 
 .about-section .text-content a {
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .about-section .text-content a:hover {
-  color: #537D8D;
+  color: #537d8d;
+}
+
+/* ============================= */
+/* ABOUT SECTION - RESPONSIVE    */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 3rem auto;
+    padding: 1.5rem;
+  }
+
+  .about-section .text-content {
+    max-width: none;
+  }
+
+  .about-section .image-content img {
+    width: min(100%, 400px);
+  }
 }
 
 /* ============================= */
@@ -342,7 +381,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo-section h2 {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -591,14 +630,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .interests-section .bg-blur {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: -10px;
   background-image: url('images/r-background.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(4px) brightness(0.3);
+  background-repeat: no-repeat;
+  filter: blur(3px) brightness(0.3);
   z-index: 0;
 }
 
@@ -662,6 +699,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #f1f1f1;
   line-height: 1.7;
   margin: 0;
+  text-align: center;
 }
 
 .features .card:hover p {
@@ -714,7 +752,7 @@ h1, h2, h3, h4, h5, h6 {
 .section .text h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .section .text p {
@@ -821,7 +859,7 @@ footer {
   .about-section {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .about-section .image-content img {
