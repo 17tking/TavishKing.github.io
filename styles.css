@@ -297,7 +297,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 4rem;
   max-width: 1200px;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 2rem;
 }
 
@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
   .about-section {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    margin: 3rem auto;
+    margin: 1rem auto;
     padding: 1.5rem;
   }
 
