@@ -370,19 +370,46 @@ h1, h2, h3, h4, h5, h6 {
 /* ============================= */
 /* TOOLS SECTION */
 /* ============================= */
-.logo-section {
+
+.carousel {
+  margin: 100px auto;
+  width: 80%;
+  border: none;
+  display: flex;
+  overflow-x: hidden;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 5em;
+  height: 7em;
+  padding: 2em;
+  background: none;
+  border-radius: .2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  padding: 3rem 2rem;
-  margin: 3rem 0;
 }
 
-.logo-section h2 {
+.card i {
+  font-size: 6rem !important;
+}
+
+.group {
   display: flex;
-  gap: 4rem;
   align-items: center;
+  justify-content: center;
+  gap: 3em;
+  animation: spin 15s infinite linear;
+  padding-right: 3em;
+}
+
+@keyframes spin {
+  from {translate: 0;}
+  to {translate: -100%;}
 }
 
 .logo-section i {
@@ -393,6 +420,36 @@ h1, h2, h3, h4, h5, h6 {
 .logo-section i:hover {
   transform: scale(1.15);
 }
+
+
+@media (max-width: 600px) {
+
+  .carousel {
+    width: 95%;
+    margin: 50px auto;
+  }
+
+  .card {
+    flex: 0 0 3em;
+    height: 4em;
+    padding: 1em;
+  }
+
+  .card i {
+    font-size: 3rem !important;
+  }
+
+  .group {
+    gap: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  .logo-section i {
+    font-size: 3rem;
+  }
+
+}
+
 
 /* ============================= */
 /* PROJECTS SECTION */
@@ -660,7 +717,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
 }
 
-.features .card {
+.features .card-interest {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   padding: 2rem;
@@ -670,12 +727,12 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.features .card:hover {
+.features .card-interest:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
 }
 
-.features .card span {
+.features .card-interest span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -688,21 +745,21 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-.features .card h4 {
+.features .card-interest h4 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #fff;
 }
 
-.features .card p {
+.features .card-interest p {
   color: #f1f1f1;
   line-height: 1.7;
   margin: 0;
   text-align: center;
 }
 
-.features .card:hover p {
+.features .card-interest:hover p {
   color: #E9A13C;
 }
 
@@ -784,6 +841,8 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+
+
 /* ============================= */
 /* FOOTER */
 /* ============================= */
@@ -792,7 +851,8 @@ footer {
   padding: 2rem;
   background-color: #f1f1f1;
   color: #666;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  line-height: 0.4;
 }
 
 /* ============================= */
@@ -1087,21 +1147,21 @@ footer {
     padding: 2rem 1rem;
   }
 
-  .features .card {
+  .features .card-interest {
     padding: 1.5rem;
   }
 
-  .features .card span {
+  .features .card-interest span {
     width: 50px;
     height: 50px;
     font-size: 1.75rem;
   }
 
-  .features .card h4 {
+  .features .card-interest h4 {
     font-size: 1.25rem;
   }
 
-  .features .card p {
+  .features .card-interest p {
     font-size: 0.95rem;
   }
 
